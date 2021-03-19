@@ -1,3 +1,5 @@
+# Easy Collect
+
 <div align="center">
 <img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/images/centro_de_inovacao_dp6.png" height="100px" />
 </div>
@@ -14,7 +16,7 @@
   </a>
 </p>
 
-# Easy Collect
+## 1. Para que serve?
 
 O Easy Collect tem como objetivo facilitar a implementação, a manutenção e a padronização de *tags* no contexto de *digital analytics*.
 
@@ -27,7 +29,7 @@ Resumindo, o utilize o Easy Collect para:
 - Funções simplificadas para coleta de dados;
 - Padronização do código das tags.
 
-### Estendendo o Easy Collect
+### 1.1. Estendendo o Easy Collect
 
 Um dos principais conceitos do Easy Collect é a manutenção de sua API com o versionamento básico [SemVer](https://semver.org/). Para isso, recomendamos que a expansão de sua API para situações específicas, ou seja, utilizadas em projetos com particularidades que não irão se repetir, seja feita através do objeto `fn`.
 
@@ -42,7 +44,7 @@ easyCollect.fn.minhaFuncao = function(name) {
 easyCollect.fn.minhaFuncao('DP6'); // DP6
 ```
 
-### Compatibilidade
+### 1.2. Compatibilidade
 
 O Easy Collect depende da função nativa `querySelectorAll`. Os navegadores com suporte a essa funcionalidade são:
 
@@ -50,11 +52,33 @@ O Easy Collect depende da função nativa `querySelectorAll`. Os navegadores com
 | ------ | ------- | --- | ----- | ------ |
 | 1      | 3.5     | 8   | 10    | 3.2    |
 
-## Tag Managers
+## 2. Tag Managers
 
 Inicialmente, na versão 1.0, a biblioteca dá suporte para o Google Tag Manager com envio de dados para o Google Analytics, mas está planejado o suporte para demais ferramentas do mercado também.
 
-### Google Tag Manager
+### 2.1. Google Tag Manager
 
 - [Documento de Referência Técnica](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
 - [Configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+
+## 3. Como contribuir
+
+Pull requests são bem-vindos! Nós vamos adorar ajuda para evoluir esse modulo. Senta-se livre para navegar por open issues buscando por algo que possa fazer. Caso temha uma nova feature ou bug, por favor abra uma nova issue para ser acompanhada pelo nosso time.
+
+### 3.1 Requisitos obrigatórios
+
+Só serão aceito as contribuições que estiverem seguindo os seguintes requisitos:
+
+- [Padrão de commit](https://www.conventionalcommits.org/en/v1.0.0/)
+
+## 4. Api Docs
+
+- [Index.js](https://github.com/dp6/easy-collect/blob/master/docs/index.md)
+
+## Suporte:
+
+**DP6 Koopa-troopa Team**
+
+_e-mail: <koopas@dp6.com.br>_
+
+<img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/images/koopa.png" height="100" />
