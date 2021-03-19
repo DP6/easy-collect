@@ -1,0 +1,111 @@
+{
+    "name": "easy-collect",
+    "version": "1.0.1",
+    "description": "> Biblioteca auxiliar para implementação dos Tag Managers da DP6.",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DP6/easy-collect.git"
+    },
+    "author": "",
+    "contributors": [
+        {
+            "name": "Bruno Munhoz",
+            "email": "bpm1993@gmail.com"
+        },
+        {
+            "name": "Paulo Brumatti",
+            "email": "paulo8624@gmail.com"
+        }
+    ],
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/DP6/easy-collect/issues"
+    },
+    "homepage": "https://github.com/DP6/easy-collect#readme",
+    "scripts": {
+        "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary --reporter=text  mocha test/index.test.js --require @babel/register",
+        "coverage": "nyc --reporter=lcov npm run test"
+    },
+    "nyc": {
+        "check-coverage": true,
+        "per-file": true,
+        "lines": [
+            80,
+            99
+        ],
+        "statements": [
+            90,
+            99
+        ],
+        "functions": [
+            90,
+            99
+        ],
+        "branches": [
+            80,
+            99
+        ],
+        "exclude": [
+            "build",
+            "documentation-images"
+        ],
+        "include": [
+            "core/**/*.js",
+            "gtm/*.js",
+            "gtm/**/*.js"
+        ],
+        "reporter": [
+            "lcov",
+            "text-summary",
+            "text"
+        ],
+        "require": [
+            "@babel/register"
+        ],
+        "sourceMap": false,
+        "instrument": false
+    },
+    "release": {
+        "branch": "master",
+        "plugins": [
+          "@semantic-release/commit-analyzer",
+          "@semantic-release/release-notes-generator",
+          ["@semantic-release/npm", {
+            "npmPublish": false
+          }],
+          ["@semantic-release/github"]
+        ]
+      },
+    "devDependencies": {
+        "@babel/cli": "^7.12.8",
+        "@babel/core": "^7.12.9",
+        "@babel/preset-env": "^7.12.7",
+        "@babel/register": "^7.12.1",
+        "babel-plugin-istanbul": "^6.0.0",
+        "chai": "^4.2.0",
+        "commitizen": "^4.2.2",
+        "coveralls": "^3.1.0",
+        "cross-env": "^7.0.3",
+        "cz-conventional-changelog": "^3.3.0",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-beautify": "^3.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-include": "^2.4.1",
+        "gulp-minify": "^3.1.0",
+        "gulp-replace": "^1.0.0",
+        "gulp-strip-comments": "^2.5.2",
+        "gulp-uglify": "^3.0.2",
+        "jsdom": "^16.4.0",
+        "mocha": "^8.2.1",
+        "nyc": "^15.1.0",
+        "sonarqube-scanner": "^2.8.0"
+    },
+    "dependencies": {},
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}

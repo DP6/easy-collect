@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": ".prettierr",
+      "options": { "parser": "json" }
+    }
+  ],
+  "printWidth": 120,
+  "tabWidth": 2,
+  "singleQuote": true
+}
