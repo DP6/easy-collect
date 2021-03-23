@@ -71,10 +71,6 @@ Só serão aceito as contribuições que estiverem seguindo os seguintes requisi
 
 - [Padrão de commit](https://www.conventionalcommits.org/en/v1.0.0/)
 
-## 4. Api Docs
-
-- [Index.js](https://github.com/dp6/easy-collect/blob/master/docs/index.md)
-
 ## Suporte:
 
 **DP6 Koopa-troopa Team**
