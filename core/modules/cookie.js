@@ -23,20 +23,29 @@ function getCookie(key) {
  * @param {*} value Valor do cookie
  * @param {*} opts Opções do cookie, como vencimento e domínio
  */
-function setCookie(name, value, opts) {
-    var exdate, cookie;
-    opts = opts || {};
+function setCookie(name, value, opts = {}) {
 
-  cookie = name + '=' + window.escape(value);
+  let cookie = name + '=' + window.escape(value);
+
   if (opts.exdays) {
-    exdate = new Date();
+    let exdate = new Date();
     exdate.setDate(exdate.getDate() + opts.exdays);
     cookie += '; expires=' + exdate.toUTCString();
+    delete opts.exdays;
   }
-  if (opts.domain) {
-    cookie += '; domain=' + opts.domain;
+
+  if (!opts.samesite) {
+    cookie += '; samesite=none; secure';
   }
-  cookie += '; path=' + (opts.path || '/');
+
+  for (let optKey in opts) {
+    cookie += "; " + optKey;
+    let optValue = opts[optKey];
+    if (optValue !== true) {
+      cookie += "=" + optValue;
+    }
+  }
+
   return (document.cookie = cookie);
 }
 
@@ -51,14 +60,13 @@ function setCookie(name, value, opts) {
  * @param {*} opts Opções do cookie, como vencimento e domínio
  */
 function cookie(name, value, opts) {
-    if (typeof value === 'undefined')
-        return getCookie(name);
-
-    return setCookie(name, value, opts);
+  if (typeof value === 'undefined')
+    return getCookie(name);
+  return setCookie(name, value, opts);
 }
 
 module.exports = {
-    getCookie: getCookie,
-    setCookie: setCookie,
-    cookie: cookie
+  getCookie: getCookie,
+  setCookie: setCookie,
+  cookie: cookie
 };

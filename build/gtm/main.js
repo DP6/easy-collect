@@ -71,20 +71,29 @@
     return window.unescape(end === -1 ? cookie : cookie.substring(0, end));
   }
   
-  function setCookie(name, value, opts) {
-    var exdate, cookie;
-    opts = opts || {};
+  function setCookie(name, value, opts = {}) {
+
+    let cookie = name + '=' + window.escape(value);
   
-    cookie = name + '=' + window.escape(value);
     if (opts.exdays) {
-      exdate = new Date();
+      let exdate = new Date();
       exdate.setDate(exdate.getDate() + opts.exdays);
       cookie += '; expires=' + exdate.toUTCString();
+      delete opts.exdays;
     }
-    if (opts.domain) {
-      cookie += '; domain=' + opts.domain;
+  
+    if (!opts.samesite) {
+      cookie += '; samesite=none; secure';
     }
-    cookie += '; path=' + (opts.path || '/');
+  
+    for (let optKey in opts) {
+      cookie += "; " + optKey;
+      let optValue = opts[optKey];
+      if (optValue !== true) {
+        cookie += "=" + optValue;
+      }
+    }
+  
     return (document.cookie = cookie);
   }
   
