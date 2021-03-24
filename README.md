@@ -18,24 +18,24 @@
 
 ## 1. Para que serve?
 
-O Easy Collect tem como objetivo facilitar a implementação, a manutenção e a padronização de *tags* no contexto de *digital analytics*.
+O _Easy Collect_ tem como objetivo facilitar a implementação, a manutenção e a padronização de *tags* no contexto de *digital analytics*.
 
-Um exemplo dos esforços envolvidos no suporte à padronização está na implementação de funções similares às da biblioteca jQuery, comumente utilizada em projetos de tagueamento. Deste modo, mesmo na ausência desta, será possível garantir o padrão e qualidade da coleta dos dados (Consultar a tabela de compatibilidade). Caso a jQuery exista, o Easy Collect simplesmente delega a execução para ela, ou seja, o código nos dois casos será o mesmo.
+Um exemplo dos esforços envolvidos no suporte à padronização está na implementação de funções similares às da biblioteca _jQuery_, comumente utilizada em projetos de tagueamento. Deste modo, mesmo na ausência desta, será possível garantir o padrão e qualidade da coleta dos dados (Consultar a tabela de compatibilidade). Caso a _jQuery_ exista, o _Easy Collect_ simplesmente delega a execução para ela, ou seja, o código nos dois casos será o mesmo.
 
-Resumindo, o utilize o Easy Collect para:
+Resumindo, o utilize o _Easy Collect_ para:
 
-- Ter acesso à funções de manipulação do DOM sem depender da jQuery;
-- Enviar automaticamente alertas e eventos para o Google Analytics indicando possíveis erros de JavaScript no tagueamento;
+- Ter acesso à funções de manipulação do DOM sem depender da _jQuery_;
+- Enviar automaticamente alertas e eventos para o _Google Analytics_ indicando possíveis erros de JavaScript no tagueamento;
 - Funções simplificadas para coleta de dados;
 - Padronização do código das tags.
 
 ### 1.1. Estendendo o Easy Collect
 
-Um dos principais conceitos do Easy Collect é a manutenção de sua API com o versionamento básico [SemVer](https://semver.org/). Para isso, recomendamos que a expansão de sua API para situações específicas, ou seja, utilizadas em projetos com particularidades que não irão se repetir, seja feita através do objeto `fn`.
+Um dos principais conceitos do _Easy Collect_ é a manutenção de sua API com o versionamento básico [SemVer](https://semver.org/). Para isso, recomendamos que a expansão de sua API para situações específicas, ou seja, utilizadas em projetos com particularidades que não irão se repetir, seja feita através do objeto `fn`.
 
 #### Objeto `fn`
 
-Se trata de uma variável global dentro do escopo do objeto Easy Collect, visando agrupar as funções que não pertencem ao escopo atual do projeto.
+Se trata de uma variável global dentro do escopo do objeto _Easy Collect_, visando agrupar as funções que não pertencem ao escopo atual do projeto.
 
 ```javascript
 easyCollect.fn.minhaFuncao = function(name) {
@@ -46,7 +46,7 @@ easyCollect.fn.minhaFuncao('DP6'); // DP6
 
 ### 1.2. Compatibilidade
 
-O Easy Collect depende da função nativa `querySelectorAll`. Os navegadores com suporte a essa funcionalidade são:
+O _Easy Collect_ depende da função nativa `querySelectorAll`. Os navegadores com suporte a essa funcionalidade são:
 
 | Chrome | Firefox | IE  | Opera | Safari |
 | ------ | ------- | --- | ----- | ------ |
@@ -54,7 +54,7 @@ O Easy Collect depende da função nativa `querySelectorAll`. Os navegadores com
 
 ## 2. Tag Managers
 
-Inicialmente, na versão 1.0, a biblioteca dá suporte para o Google Tag Manager com envio de dados para o Google Analytics, mas está planejado o suporte para demais ferramentas do mercado também.
+Inicialmente, na versão 1.0, a biblioteca dá suporte para o _Google Tag Manager_ com envio de dados para o _Google Analytics_, mas está planejado o suporte para demais ferramentas do mercado também.
 
 ### 2.1. Google Tag Manager
 
@@ -63,7 +63,7 @@ Inicialmente, na versão 1.0, a biblioteca dá suporte para o Google Tag Manager
 
 ## 3. Como contribuir
 
-Pull requests são bem-vindos! Nós vamos adorar ajuda para evoluir esse modulo. Senta-se livre para navegar por open issues buscando por algo que possa fazer. Caso temha uma nova feature ou bug, por favor abra uma nova issue para ser acompanhada pelo nosso time.
+Pull requests são bem-vindos! Nós vamos adorar ajuda para evoluir esse modulo. Sinta-se livre para navegar por _open issues_ buscando por algo que possa fazer. Caso tenha uma nova _feature_ ou _bug_, por favor abra uma nova _issue_ para ser acompanhada pelo nosso time.
 
 ### 3.1 Requisitos obrigatórios
 
