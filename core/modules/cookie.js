@@ -23,12 +23,12 @@ function getCookie(key) {
  * @param {*} value Valor do cookie
  * @param {*} opts Opções do cookie, como vencimento e domínio
  */
-function setCookie(name, value, opts = {}) {
+function setCookie(name, value, opts) {
 
-  let cookie = name + '=' + window.escape(value);
+  var cookie = name + '=' + window.escape(value);
 
   if (opts.exdays) {
-    let exdate = new Date();
+    var exdate = new Date();
     exdate.setDate(exdate.getDate() + opts.exdays);
     cookie += '; expires=' + exdate.toUTCString();
     delete opts.exdays;
@@ -38,9 +38,9 @@ function setCookie(name, value, opts = {}) {
     cookie += '; samesite=none; secure';
   }
 
-  for (let optKey in opts) {
+  for (var optKey in opts) {
     cookie += "; " + optKey;
-    let optValue = opts[optKey];
+    var optValue = opts[optKey];
     if (optValue !== true) {
       cookie += "=" + optValue;
     }
