@@ -19,7 +19,7 @@
     errorSampleRate: 1,
     gtmCleanup: function (gtmId) {
       collect.setDataLayer('ecommerce', undefined);
-      collect.setDataLayer('noInteraction', undefined);
+      collect.setDataLayer('eventNoInteraction', undefined);
     }
   };
   

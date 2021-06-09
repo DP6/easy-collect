@@ -10,7 +10,7 @@ Em configurações avançadas, a opção de executar uma única vez por página 
 
 ![Configuração uma por página](documentation-images/once_per_page.png)
 
-As tags que utilizarem o objeto analyticsHelper devem configurar esta tag principal como requisito na seção _sequência de tags_, para garantir que o objeto estará definido antes do uso.
+As tags que utilizarem o objeto easyCollect devem configurar esta tag principal como requisito na seção _sequência de tags_, para garantir que o objeto estará definido antes do uso.
 
 ## Acionadores
 
@@ -76,13 +76,15 @@ Caso utilize a opção waitQueue (habilitada por padrão), a seguinte variável 
 ```javascript
 function () {
   return function () {
-    analyticsHelper.internal.sentPageview = true;
-    while (analyticsHelper.internal.eventQueue.length) {
-      analyticsHelper.event.apply(analyticsHelper, analyticsHelper.internal.eventQueue.shift());
+    easyCollect.internal.sentPageview = true;
+    while (easyCollect.internal.eventQueue.length) {
+      easyCollect.event.apply(easyCollect, easyCollect.internal.eventQueue.shift());
     }
-    while (analyticsHelper.internal.timingQueue.length) {
-      analyticsHelper.timing.apply(analyticsHelper, analyticsHelper.internal.timingQueue.shift());
+    while (easyCollect.internal.timingQueue.length) {
+      easyCollect.timing.apply(easyCollect, easyCollect.internal.timingQueue.shift());
     }
   };
 }
 ```
+
+![Tag de template de GA Settings](documentation-images/hit_callback.png)
