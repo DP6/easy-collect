@@ -98,7 +98,7 @@
         "gulp-strip-comments": "^2.5.2",
         "gulp-uglify": "^3.0.2",
         "jsdom": "^16.6.0",
-        "mocha": "^9.0.1",
+        "mocha": "^9.1.4",
         "nyc": "^15.1.0",
         "sonarqube-scanner": "^2.8.1"
     },
