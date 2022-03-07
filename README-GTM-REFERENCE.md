@@ -1,93 +1,119 @@
-# Sumário
+<div align="center">
+<img src="https://raw.githubusercontent.com/DP6/templates-centro-de-inovacoes/main/public/images/centro_de_inovacao_dp6.png" height="100px" />
+</div>
 
-- [Sumário](#sumário)
-- [Referência técnica](#referência-técnica)
-  - [Objeto options](#objeto-options)
+<p align="center">
+  <a href="#badge">
+    <img alt="semantic-release" src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
+  </a>
+  <a href="https://codecov.io/gh/DP6/easy-collect">
+    <img src="https://codecov.io/gh/DP6/easy-collect/branch/master/graph/badge.svg?token=GAQ88UQJQN"/>
+  </a>
+  <a href="#badge">
+    <img alt="Test" src="https://github.com/dp6/easy-collect/actions/workflows/test.yml/badge.svg">
+  </a>
+  <a href="https://www.codacy.com/gh/DP6/easy-collect/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=DP6/easy-collect&amp;utm_campaign=Badge_Grade">
+    <img src="https://app.codacy.com/project/badge/Grade/741dc3805af14444b9e6b4cb9b4269f4"/>
+  </a>
+</p>
+
+
+### Available Languages
+
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
+- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE-pt.md)
+
+---
+
+# Summary
+
+- [Technical Reference](#referência-técnica)
+  - [Options object](#object-options)
     - [init(opt_options)](#initopt_options)
   - [API](#api)
-    - [Coleta Google Analytics (GA)](#coleta-google-analytics-ga)
+    - [Google Analytics Collection (GA)](#coleta-google-analytics-ga)
       - [pageview(path, object)](#pageviewpath-object)
-        - [Parâmetros](#parâmetros)
-        - [Exemplo de código](#exemplo-de-código)
+        - [Parameters](#parâmetros)
+        - [Code example](#exemplo-de-código)
       - [event(category, action, label, object)](#eventcategory-action-label-object)
       - [event(category, action, label, value, object)](#eventcategory-action-label-value-object)
-        - [Parâmetros](#parâmetros-1)
-        - [Exemplo de código](#exemplo-de-código-1)
-    - [Utilidades](#utilidades)
+        - [Parameters](#parâmetros-1)
+        - [Code example](#exemplo-de-código-1)
+    - [Utilities](#utilidades)
       - [getDataLayer(key)](#getdatalayerkey)
-        - [Argumentos](#argumentos)
-        - [Retorno:](#retorno)
-        - [Exemplo de código](#exemplo-de-código-2)
+        - [Arguments](#argumentos)
+        - [Return:](#retorno)
+        - [Code example](#exemplo-de-código-2)
       - [getKey(key, opt_root)](#getkeykey-opt_root)
-        - [Argumentos](#argumentos-1)
-        - [Retorno](#retorno-1)
-        - [Exemplo de código](#exemplo-de-código-3)
+        - [Arguments](#argumentos-1)
+        - [Return](#retorno-1)
+        - [Code example](#exemplo-de-código-3)
       - [sanitize(text, opts)](#sanitizetext-opts)
-        - [Argumentos](#argumentos-2)
-        - [Retorno](#retorno-2)
-        - [Exemplo de código](#exemplo-de-código-4)
+        - [Arguments](#argumentos-2)
+        - [Return](#retorno-2)
+        - [Code example](#exemplo-de-código-4)
       - [cookie(name, value, opts)](#cookiename-value-opts)
-        - [Argumentos](#argumentos-3)
-        - [Retorno](#retorno-3)
-        - [Exemplo de criação de cookie](#exemplo-de-criação-de-cookie)
-        - [Exemplo de recuperar valor de um cookie](#exemplo-de-recuperar-valor-de-um-cookie)
+        - [Arguments](#argumentos-3)
+        - [Return](#retorno-3)
+        - [Cookie creation example](#exemplo-de-criação-de-cookie)
+        - [Example of retrieving cookie value](#exemplo-de-recuperar-value-de-um-cookie)
     - [SafeFn](#safefn)
-      - [Argumentos da função](#argumentos-da-função)
-      - [Retorno](#retorno-4)
-        - [Exemplo de código](#exemplo-de-código-5)
-      - [Lançamento de Exceptions](#lançamento-de-exceptions)
-    - [Easy Collect Interno](#easy-collect-interno)
+      - [Function arguments](#argumentos-da-função)
+      - [Return](#retorno-4)
+        - [Code example](#exemplo-de-código-5)
+      - [Throwing exceptions](#lançamento-de-exceptions)
+    - [Internal Easy Collect](#easy-collect-interno)
       - [on(event, selector, callback, parent)](#onevent-selector-callback-parent)
-      - [Argumentos](#argumentos-4)
-        - [Exemplo de código](#exemplo-de-código-6)
+      - [Arguments](#argumentos-4)
+        - [Code example](#exemplo-de-código-6)
       - [delegate(event, selector, callback)](#delegateevent-selector-callback)
-      - [Argumentos](#argumentos-5)
-        - [Exemplo de código](#exemplo-de-código-7)
+      - [Arguments](#argumentos-5)
+        - [Code example](#exemplo-de-código-7)
       - [wrap(elm)](#wrapelm)
-        - [Argumentos](#argumentos-6)
-        - [Retorno](#retorno-5)
-        - [Exemplos de código](#exemplos-de-código)
-    - [Objeto Wrap](#objeto-wrap)
-      - [Atributo nodes](#atributo-nodes)
+        - [Arguments](#argumentos-6)
+        - [Return](#retorno-5)
+        - [Code example](#exemplos-de-código)
+    - [Object Wrap](#object-wrap)
+      - [Nodes Attribute](#atributo-nodes)
       - [hasClass(className, opts)](#hasclassclassname-opts)
-        - [Argumentos](#argumentos-7)
-        - [Retorno](#retorno-6)
-        - [Exemplo de código](#exemplo-de-código-8)
+        - [Arguments](#argumentos-7)
+        - [Return](#retorno-6)
+        - [Code example](#exemplo-de-código-8)
       - [log(type, message, object)](#logtype-message-object)
-        - [Argumentos](#argumentos-8)
-        - [Retorno](#retorno-7)
-        - [Exemplo de código](#exemplo-de-código-9)
+        - [Arguments](#argumentos-8)
+        - [Return](#retorno-7)
+        - [Code example](#exemplo-de-código-9)
       - [matches(selector, reduce)](#matchesselector-reduce)
-        - [Argumentos](#argumentos-9)
-        - [Retorno](#retorno-8)
-        - [Exemplo de código](#exemplo-de-código-10)
+        - [Arguments](#argumentos-9)
+        - [Return](#retorno-8)
+        - [Code example](#exemplo-de-código-10)
       - [closest(selector)](#closestselector)
-        - [Argumentos](#argumentos-10)
-        - [Retorno](#retorno-9)
-        - [Exemplo de código](#exemplo-de-código-11)
+        - [Arguments](#argumentos-10)
+        - [Return](#retorno-9)
+        - [Code example](#exemplo-de-código-11)
       - [text(opt)](#textopt)
-        - [Argumentos](#argumentos-11)
-        - [Retorno](#retorno-10)
-        - [Exemplo de código](#exemplo-de-código-12)
+        - [Arguments](#argumentos-11)
+        - [Return](#retorno-10)
+        - [Code example](#exemplo-de-código-12)
       - [find(sel)](#findsel)
-        - [Argumentos](#argumentos-12)
-        - [Retorno](#retorno-11)
-        - [Exemplo de código](#exemplo-de-código-13)
+        - [Arguments](#argumentos-12)
+        - [Return](#retorno-11)
+        - [Code example](#exemplo-de-código-13)
       - [map(func, params)](#mapfunc-params)
-        - [Argumentos](#argumentos-13)
-      - [Exemplo de código](#exemplo-de-código-14)
-      - [Tamanho do Pacote](#tamanho-do-pacote)
-      - [Créditos](#créditos)
+        - [Arguments](#argumentos-13)
+      - [Code example](#exemplo-de-código-14)
+      - [Package size](#tamanho-do-pacote)
+      - [Credits](#créditos)
 
-# Referência técnica
+# Technical Reference
 
 > Easy Collect para o Google Tag Manager
 
-Este documento introduz as APIs e funcionalidades desenvolvidas para o suporte ao Google Tag Manager (GTM). São importantes algumas configurações do lado da própria ferramenta para que o código implementado na tag do Easy Collect tenha o comportamento esperado. Mais detalhes sobre [aqui](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
+This document introduces the APIs and functionality developed to support Google Tag Manager (GTM). Some settings on the tool's side are important so that the code implemented in the Easy Collect tag has the expected behavior. More details about [here](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
 
-## Objeto options
+## Options object
 
-O objeto `options` contém as configurações globais do _Analytics Helper_. Os valores padrões servem na maioria dos casos, por isso devem ser alterados com cautela e de forma consciente.
+The `options` object contains the global _Easy Collect_ settings. The default values will work in most cases, so they should be changed carefully and consciously.
 
 ```javascript
     var options = {
@@ -107,61 +133,60 @@ O objeto `options` contém as configurações globais do _Analytics Helper_. Os 
 
 ### init(opt_options)
 
-Utilize esta função, de caráter opcional, para inicializar o Easy Collect com opções diferentes das padrões. Recebe como argumento o objeto `opt_options`, que possui as seguintes chaves:
+Use this optional function to start Easy Collect with options other than the default ones. It takes as an argument the `opt_options` object, which has the following keys:
 
-- `helperName` -- Por padrão `"easyCollect"`.
-  Uma string que indentifica o nome da instância do _Analytics Helper_ no objeto _window_ do navegator. O tagueamento não é afetado pela mudança desse valor, se feito pela função `safeFn` (recomendado).
+- `helperName` -- By default `"easyCollect"`.
+   A string that identifies the name of the _Easy Collect_ instance in the _window_ object of the browser. Tagging is not affected by changing this value if done by the `safeFn` function (recommended).
 
-- `dataLayerName` -- Por padrão `"dataLayer"`.
-  Uma string que identifica o nome da instância da _camada de dados_ no objeto _window_ do navegador. Deve ser o mesmo valor configurado no _snippet_ do GTM para que as funções de interface do _Analytics Helper_ (ex: `getDataLayer`) funcionem.
+- `dataLayerName` -- By default `"dataLayer"`.
+   A string that identifies the name of the _data layer_ instance in the browser's _window_ object. It must be the same value set in the _snippet_ of the GTM in order for the _Easy Collect_ interface functions (eg `getDataLayer`) to work.
 
-- `debug` -- Por padrão é a variavél `{{Debug Mode}}` do GTM. Se desabilitada, é `false`.
-  Um booleano que sinaliza para o _Analytics Helper_ se o contexto atual é de depuração ou produção. Caso verdadeiro, os eventos serão disparados apenas via `console.log`, sem envios para o GA.
+- `debug` -- By default this is the GTM variable `{{Debug Mode}}`. If disabled, it is `false`.
+   A boolean that signals to _Easy Collect_ whether the current context is debug or production. If true, events will be triggered only via `console.log`, without sending them to GA.
 
-- `waitQueue` -- Por padrão é `true`
-  Um booleano que sinaliza para o _Analytics Helper_ se ele deve utilizar uma fila de espera nos eventos. Caso verdadeiro, todos eventos serão empilhados numa estrutura interna até que ocorra o primeiro pageview na página. Recomendamos que essa opção esteja sempre ativada, pois evita inconsistências nos relatórios do Google Analytics.
+- `waitQueue` -- Default is `true`
+   A boolean that signals to _Easy Collect_ whether it should use a queue on events. If true, all events will be stacked in an internal structure until the first pageview on the page occurs. We recommend that this option is always enabled, as it avoids inconsistencies in Google Analytics reports.
 
-- `containerId` -- Por padrão é a variável `{{Container ID}}` do GTM. Se desabilitada, é a string vazia `''`.
-  Uma string que deve ser equivalente ao ID do contêiner do GTM onde o _Analytics Helper_ foi configurado (GTM-XXXXX).
+- `containerId` -- By default this is the GTM variable `{{Container ID}}`. If disabled, it is the empty string `''`.
+   A string that should match the ID of the GTM container where _Easy Collect_ was configured (GTM-XXXXX).
 
 - `exceptionEvent` -- Por padrão `"gtm_dataQuality_event"`.
   Uma string que identifica o evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
 
 - `exceptionCategory` -- Por padrão `"GTM Exception"`.
-  Uma string que indica qual o valor que deve ser preenchido na chave `"event_category"` do evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+  Uma string que indica qual o value que deve ser preenchido na chave `"event_category"` do evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+- `customNamePageview` -- By default `"ga_pageview"`.
+   A string that identifies the event sent to the data layer each time the `pageview` function (see below) is called.
 
-- `customNamePageview` -- Por padrão `"ga_pageview"`.
-  Uma string que identifica o evento enviado à camada de dados toda vez que a função `pageview` (ver abaixo) for chamada.
+- `customNameEvent` -- By default `"ga_event"`.
+   A string that identifies the event sent to the data layer each time the `event` function (see below) is called.
 
-- `customNameEvent` -- Por padrão `"ga_event"`.
-  Uma string que identifica o evento enviado à camada de dados toda vez que a função `event` (ver abaixo) for chamada.
+- `customNameTiming` -- By default `"ga_timing"`.
+   A string that identifies the timing event sent to the data layer each time the `timing` function (see below) is called.
 
-- `customNameTiming` -- Por padrão `"ga_timing"`.
-  Uma string que identifica o evento de timing enviado à camada de dados toda vez que a função `timing` (ver abaixo) for chamada.
-
-- `errorSampleRate` -- Por padrão `1` .
-  Deve ser um inteiro entre 0 e 1, que controla o nível de amostragem dos erros enviados ao GA de _Data Quality_ **(mais detalhes à adicionar)**. Serve para controlar a coleta em ambientes onde o volume de disparos é muito grande.
+- `errorSampleRate` -- By default `1` .
+   Must be an integer between 0 and 1, which controls the sampling level of errors sent to the GA of _Data Quality_ **(more details to be added)**. It is used to control the collection in environments where the volume of shots is very large.
 
 ## API
 
-### Coleta Google Analytics (GA)
+### Google Analytics Collection (GA)
 
-As funções a seguir possuem especificidades para coleta de dados baseado nas ferramentas GA e GTM. Devido a isso, as funções internas desta API utilizam a variável criada pelo GTM chamada [`dataLayer`](https://developers.google.com/tag-manager/devguide). Para garantir que as funcionalidades das funções estejam corretas, será necessário garantir que o ambiente em questão possua a camada de dados inicializada corretamente.
+The following functions have specificities for collecting data based on GA and GTM tools. Because of this, the internal functions of this API use the variable created by GTM called [`dataLayer`](https://developers.google.com/tag-manager/devguide). To ensure that the functionalities of the functions are correct, it will be necessary to ensure that the environment in question has the data layer correctly initialized.
 
 #### pageview(path, object)
 
-Utilizada para o disparo de pageview personalizado.
+Used to trigger custom pageview.
 
-##### Parâmetros
+##### Parameters
 
-- `path` (opcional): String que recebe o path do Pageview personalizado.
-- `object` (opcional): Objeto que será atribuído ao pageview. Pode ser utilizado para passar objetos de Enhanced Ecommerce, além de métricas e dimensões personalizadas. Qualquer chave personalizada será inserida como push no dataLayer.
+- `path` (optional): String that receives the path of the custom Pageview.
+- `object` (optional): Object that will be assigned to the pageview. It can be used to pass Enhanced Ecommerce objects, as well as custom metrics and dimensions. Any custom key will be pushed into the dataLayer.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.pageview('/post/finalizou-leitura', {
-  area: 'Aberta',
+easyCollect.pageview('/post/finished-reading', {
+  area: 'Open',
   categoria: 'Data Science'
 });
 ```
@@ -170,175 +195,173 @@ easyCollect.pageview('/post/finalizou-leitura', {
 
 #### event(category, action, label, value, object)
 
-Utilizada para efetuar disparos de eventos.
+Used to trigger events.
 
-##### Parâmetros
+##### Parameters
 
-- `category`: String que representa a categoria do evento.
-- `action`: String que representa a ação do evento.
-- `label` (opcional): String que pode representar o label do evento.
-- `object` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar objetos de Enhanced Ecommerce, além de métricas e dimensões personalizadas. Qualquer chave personalizada será inserida como push no dataLayer.
+- `category`: String representing the event category.
+- `action`: String representing the action of the event.
+- `label` (optional): String that can represent the event label.
+- `object` (optional): Object that will be assigned to the event. It can be used to pass Enhanced Ecommerce objects, as well as custom metrics and dimensions. Any custom key will be pushed into the dataLayer.
 
-_Importante_: A chave value pode ser passada tanto como o quarto valor da chamada quanto como um parâmetro do objeto `"object"`.
+_Important_: The value key can be passed either as the fourth value of the call or as a parameter of the object `"object"`.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo', 0, {
-  cidade: 'São Paulo'
+easyCollect.event('MyCategory', 'MyAction', 'MyLabel', 0, {
+  city: 'São Paulo'
 });
 ```
 
 ```javascript
-easyCollect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo', {
+easyCollect.event('MyCategory', 'MyAction', 'MyLabel', {
   eventValue: 0,
-  cidade: 'São Paulo'
+  city: 'São Paulo'
 });
 ```
 
-### Utilidades
+### Utilities
 
 #### getDataLayer(key)
 
-Retorna qualquer objeto contido no dataLayer exposto no ambiente. Esta função é um encapsulamento da [macro .get() do GTM](https://developers.google.com/tag-manager/api/v1/reference/accounts/containers/macros).
+Returns any object contained in the dataLayer exposed in the environment. This function is an encapsulation of the GTM [macro .get()](https://developers.google.com/tag-manager/api/v1/reference/accounts/containers/macros).
 
-##### Argumentos
+##### Arguments
 
-- `key`: String que representa a chave do objeto a ser recuperado.
+- `key`: String representing the key of the object to be retrieved.
 
-##### Retorno:
+##### Return:
 
-- **ANY**: O valor recuperado do modelo de dados do GTM.
+- **ANY**: The value retrieved from the GTM data model.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
 dataLayer.push({
-  meuObjeto: 'valor',
-  meuOutroObjeto: 'outroValor'
+  myObject: 'value',
+  myOtherObject: 'otherValue'
 });
 
-easyCollect.getDataLayer('meuObjeto'); // valor
+easyCollect.getDataLayer('myObject'); // value
 ```
 
 #### getKey(key, opt_root)
 
-Encontra um objeto ou valor pela chave informada. Caso alguma das chaves em cadeia não existir, a função retorna undefined, evitando assim o lançamento de erros.
+Finds an object or value by the given key. If any of the keys in the chain does not exist, the function returns undefined, thus avoiding throwing errors.
 
-##### Argumentos
+##### Arguments
 
-- `key`: String que representa a chave do objeto a ser encontrado
-- `opt_root` (Opcional): Objeto que possui a chave a ser encontrada. Por padrão é `window`.
+- `key`: String representing the key of the object to be found
+- `opt_root` (Optional): Object that has the key to find. By default it is `window`.
 
-##### Retorno
+##### Return
 
-- **ANY**: O valor recuperado do modelo de dados da variável informada.
+- **ANY**: The value retrieved from the data model of the given variable.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-var objeto = {
-  meuObjeto: {
-    meuArray: [
+var object = {
+  myObject: {
+    myArray: [
       {
-        minhaChave: 'encontrei meu valor'
+        myKey: 'found my value'
       }
     ]
   }
 };
 
-easyCollect.getKey('objeto.meuObjeto.meuArray.0.minhaChave'); // encontrei meu valor
-easyCollect.getKey('meuObjeto.meuArray.0.minhaChave', objeto); // encontrei meu valor
-easyCollect.getKey('chaveNaoExistente.meuArray.0.minhaChave', objeto); // undefined
+easyCollect.getKey('object.myObject.myArray.0.myKey'); // found my value
+easyCollect.getKey('myObject.myArray.0.myKey', object); // found my value
+easyCollect.getKey('chaveNaoExistente.myArray.0.myKey', object); // undefined
 ```
 
 #### sanitize(text, opts)
 
-Retorna um texto sem caracteres especiais, acentuação, espaços ou letras maiúsculas (opcionalmente).
+Returns text without special characters, accents, spaces or capital letters (optionally).
 
-##### Argumentos
+##### Arguments
 
-- `text`: String a ser tratada
-- `opts` (opcional): Objeto com variáveis para configuração da função sanitize.
-  _ `capitalized`: Define a forma com que a String será tratada. - true: Coloca a String como Camel Case; - false: Coloca a String como Snake Case.
-  _ `spacer`: Define qual texto será utilizado como separador no lugar de `_`.
+- `text`: String to be treated
+- `opts` (optional): Object with variables to configure the sanitize function.
+   _ `capitalized`: Defines the way the String will be treated. - true: Put the String as Camel Case; - false: Sets the String as Snake Case.
+   _ `spacer`: Defines which text will be used as a separator in place of `_`.
 
-##### Retorno
+##### Return
 
-- **String**: O valor recebido por parâmetro e modificado pela função.
+- **String**: The value received by parameter and modified by the function.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.sanitize('Minha String Suja'); // minha_string_suja
-easyCollect.sanitize('Minha String Suja', { capitalized: true }); // MinhaStringSuja
-easyCollect.sanitize('Minha String Suja', { spacer: '-' }); // minha-string-suja
-easyCollect.sanitize('Minha String Suja', {
+easyCollect.sanitize('My Disorganized String'); // my_disorganized_string
+easyCollect.sanitize('My Disorganized String', { capitalized: true }); // MyDisorganizedString
+easyCollect.sanitize('My Disorganized String', { spacer: '-' }); // my-disorganized-string
+easyCollect.sanitize('My Disorganized String', {
   capitalized: true,
   spacer: '-'
-}); // Minha-String-Suja
+}); // My-Disorganized-String
 ```
 
 #### cookie(name, value, opts)
+Creates a cookie or returns its value based on the Parameters received in the function.
 
-Cria um cookie ou retorna seu valor baseado nos parâmetros recebidos na função.
+##### Arguments
 
-##### Argumentos
+- `name`: String representing the name of the cookie;
+- `value`: String representing the value of the cookie;
+- `opts` (optional): Object with variables to configure the cookie function:
+   - `exdays` (optional): Numeric representing the number of days for the cookie to expire;
+   - `domain`: (optional): String representing the domain to which the cookie should be assigned;
+   - `path` (optional): String representing the website path to which the cookie should be assigned;
 
-- `name`: String que representa o nome do cookie;
-- `value`: String que representa o valor do cookie;
-- `opts` (opcional): Objeto com variáveis para configuração da função cookie:
-  - `exdays` (opcional): Numeric que representa a quantidade de dias para a expiração do cookie;
-  - `domain`: (opcional): String que representa o domínio ao qual o cookie deve ser atribuído;
-  - `path` (opcional): String que representa o path do site ao qual o cookie deve ser atribuído;
+##### Return
 
-##### Retorno
+- **String**: complete value of the created or retrieved cookie.
 
-- **String**: Valor completo do cookie criado ou recuperado.
-
-##### Exemplo de criação de cookie
+##### Cookie creation example
 
 ```javascript
-easyCollect.cookie('meuCookie', 'meuValor', {
-  exdays: 3, // Dias para expiração
-  domain: '.meudominio.com.br', // Domínio que o cookie atribuído
-  path: '/meu-path' // Path do cookie
-}); // meuCookie=meuValor; expires=Sun, 16 Oct 2016 19:18:17 GMT; domain=.meudominio.com.br; path=/meu-path
+easyCollect.cookie('myCookie', 'myValue', {
+  exdays: 3, // Expire days
+  domain: '.mydomain.com.br', // Domain that the cookie assigned
+  path: '/my-path' // Cookie path
+}); // myCookie=myValue; expires=Sun, 16 Oct 2016 19:18:17 GMT; domain=.mydomain.com.br; path=/my-path
 ```
 
-##### Exemplo de recuperar valor de um cookie
+##### Example of retrieving cookie value
 
 ```javascript
-easyCollect.cookie('meuCookie'); // meuValor
+easyCollect.cookie('myCookie'); // myValue
 ```
 
 ### SafeFn
+Easy Collect safe function. The main concept behind its use is to guarantee that data collection does not interfere with the natural behavior of the portal when it is used, avoiding leakage of logs and errors to the environment in question.
 
-Função segura do Easy Collect. O principal conceito por trás da sua utilização é a garantia da não interferência da coleta de dados no comportamento natural do portal de sua utilização, evitando vazamento de logs e erros ao ambiente em questão.
+To make this proposal effective, the function receives a parameter callback. Within the scope of this callback, it is possible to receive a parameter object with extended Easy Collect functions, in order to guarantee the encapsulation of sensitive functions. This object will be represented from now on as "Internal Easy Collect" (more details in the next section).
 
-Para efetivar essa proposta, a função recebe um callback de parâmetro. Dentro do escopo deste callback, é possível receber um objeto de parâmetro com funções estendidas do Easy Collect, com o intuito de garantir o encapsulamento de funções sensíveis. Este objeto será representado daqui em diante como "Easy Collect Interno" (mais detalhes na próxima seção).
+#### Function arguments
 
-#### Argumentos da função
+- `id`: It must receive the name of the tag (from the GTM) in which the code in question is contained.
+- `callback`: Callback function that scopes to the safeFn environment. Pass via parameter the Internal Easy Collect for use.
+- `immediate` (Optional): Boolean variable, which by default (**true**) executes the callback function immediately. If **false**, the function's return will be the safe function itself, which must be executed manually when necessary.
 
-- `id`: Deve receber o nome da tag (do GTM) em que o código em questão estiver contido.
-- `callback`: Função de callback que cria o escopo para o ambiente seguro do safeFn. Passa via parâmetro o Easy Collect Interno para utilização.
-- `immediate` (Opcional): Variável booleana, que por default (**true**) executa a função de callback imediatamente. Caso **false**, o retorno da função será a própria função segura, que deverá ser executada manualmente quando necessário.
+#### Return
 
-#### Retorno
+- **Function** or **undefined**: If the `immediate` parameter receives the value true, safeFn executes the callback and returns undefined. But if the `immediate` parameter has the value false, the return is the callback function itself to be executed later.
 
-- **Function** ou **undefined**: Caso o parâmetro `immediate` receba o valor true, o safeFn executa o callback e retorna undefined. Porém se o parâmetro `immediate` ter o valor false, o retorno é a própria função de callback para ser executada posteriormente.
-
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag do GTM', function(collect) {
-  collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo', 'MeuValor', {
+easyCollect.safeFn('GTM Tag Name', function(collect) {
+  collect.event('MyCategory', 'MyAction', 'MyLabel', 'Meuvalue', {
     dimension1: 'São Paulo'
   });
 });
 
 var fn = easyCollect.safefn(
-  'Nome da Tag do GTM',
+  'GTM Tag Name',
   function(collect) {
     console.log(new Date());
   },
@@ -348,85 +371,83 @@ var fn = easyCollect.safefn(
 setTimeout(fn, 2000);
 ```
 
-#### Lançamento de Exceptions
+#### Throwing exceptions
+The `safeFn` function has a specific treatment for Exceptions that occur within its safe scope. Using the Easy Collect customization variables options.debug, options.exceptionEvent, options.exceptionCategory and options.errorSampleRate, the function assigns valuees to the GTM dataLayer, which will use the GTM configuration to send events to Google Analytics. This practice is based on the design of [Quality Assurance](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/).
 
-A função `safeFn` tem um tratamento específico para as Exceptions que ocorrerem dentro do seu escopo seguro. Utilizando as variáveis de personalização do Easy Collect options.debug, options.exceptionEvent, options.exceptionCategory e options.errorSampleRate, a função atribui valores ao dataLayer do GTM, que utilizará a configuração do GTM para o envio de eventos ao Google Analytics. Esta prática é baseada na concepção de [Quality Assurance](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/).
+### Internal Easy Collect
 
-### Easy Collect Interno
-
-Objeto com funções internas passados via parâmetro no callback da função `safeFn`.
+Object with built-in functions passed via parameter in the `safeFn` function callback.
 
 #### on(event, selector, callback, parent)
 
-O método `on` serve para executar um callback ao executar algum evento em um elemento HTML específico. Em caso de não haver jQuery na página, ele se baseia na função querySelectorAll do javascript, e por conta disso, é preciso ficar atento a compatibilidade dos navegadores. Não é recomendado a utilização desta função em páginas que oferecem suporte a IE 7 ou inferior.
+The `on` method is used to execute a callback when executing some event in a specific HTML element. In case there is no jQuery on the page, it is based on the querySelectorAll javascript function, and because of that, it is necessary to pay attention to browser compatibility. It is not recommended to use this function on pages that support IE 7 or lower.
 
-A presença do quarto argumento, `parent`, transforma a funcionalidade do método `on` na do método [`delegate`](#delegateevent-selector-callback).
+The presence of the fourth argument, `parent`, transforms the functionality of the `on` method into that of the [`delegate`](#delegateevent-selector-callback) method.
 
-#### Argumentos
+#### Arguments
+- `event`: String of the event that will execute the callback, examples: 'mousedown', 'click', etc.
+   [Learn more](https://mdn.mozilla.org/en-US/docs/Web/Events).
 
-- `event`: String do evento que ira executar o callback, exemplos: 'mousedown', 'click', etc.
-  [Saiba mais](https://mdn.mozilla.org/en-US/docs/Web/Events).
+- `selector`: CSS Selector String that will fetch the elements that will execute the callback in the event firing.
+   [Learn More](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-- `selector`: String do Seletor CSS que irá buscar os elementos que executarão o callback no disparo do evento.
-  [Saiba mais](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+- `callback`: Function executed on triggering the event supplied in the `event` parameter.
 
-- `callback`: Função executada no disparo do evento suprido no parâmetro `event`.
+- `parent` (optional): Root element from where the event should be heard.
 
-- `parent` (opcional): Elemento raíz a partir de onde o evento deverá ser ouvido.
-
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
-  collect.on('mousedown', '#botaoX', function(collect) {
-    collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+easyCollect.safeFn('Tag Name', function(collect) {
+  collect.on('mousedown', '#buttonX', function(collect) {
+    collect.event('MyCategory', 'MyAction', 'MyLabel');
   });
 });
 
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on(
     'mousedown',
-    '#botaoX',
+    '#buttonX',
     function(collect) {
-      collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+      collect.event('MyCategory', 'MyAction', 'MyLabel');
     },
-    '#caixaY'
+    '#boxY'
   );
 });
 ```
 
 #### delegate(event, selector, callback)
 
-O método `delegate` serve para executar um callback ao executar algum evento em um elemento HTML específico. Diferentemente do `on`, ele assume como padrão que o evento deverá ser atrelado ao `document.body` e não ao seletor passado no argumento `selector`, esperando por qualquer evento que ocorra em um elemento que case com o argumento `selector`.
+The `delegate` method is used to execute a callback when executing some event on a specific HTML element. Unlike `on`, it defaults to binding the event to the `document.body` and not to the selector passed in the `selector` argument, waiting for any event that occurs on an element that matches the `selector` argument. .
 
-Este método é preferível contra o método `on` nos casos em que o elemento ainda não exista na página ou quando ele pode existir e deixar de existir dependendo da navegação do usuário, como opções de um menu suspenso ou uma lista de scroll infinito.
+This method is preferable against the `on` method in cases where the element does not already exist on the page or when it may exist and cease to exist depending on the user's navigation, such as options from a drop-down menu or an infinite scrolling list.
 
-#### Argumentos
+#### Arguments
 
-- `event`: String do evento que ira executar o callback, exemplos: 'mousedown', 'click', etc.
-  [Saiba mais](https://mdn.mozilla.org/en-US/docs/Web/Events).
+- `event`: String of the event that will execute the callback, examples: 'mousedown', 'click', etc.
+  [Learn more](https://mdn.mozilla.org/en-US/docs/Web/Events).
 
-- `selector`: String do Seletor CSS ao qual os elementos que acionarem o evento do `body` deverão ser comparados.
-  [Saiba mais](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
+- `selector`: CSS Selector String to which the elements that trigger the `body` event should be compared.
+  [Learn More](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors).
 
-- `callback`: Função executada no disparo do evento suprido no parâmetro `event`.
+- `callback`: Function executed on triggering the event supplied in the `event` parameter.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
-  collect.delegate('mousedown', '#botaoX', function(collect) {
-    collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+easyCollect.safeFn('Tag Name', function(collect) {
+  collect.delegate('mousedown', '#buttonX', function(collect) {
+    collect.event('MyCategory', 'MyAction', 'MyLabel');
   });
 });
 
 // Equivalente a
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on(
     'mousedown',
-    '#botaoX',
+    '#buttonX',
     function(collect) {
-      collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+      collect.event('MyCategory', 'MyAction', 'MyLabel');
     },
     document.body
   );
@@ -435,65 +456,65 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### wrap(elm)
 
-A função `wrap` provê diversas funções facilitadoras para interações com o DOM no intuito de padronizar e compatibilizar a coleta de dados em ambientes sem o conceito de [camada de dados](https://blog.dp6.com.br/o-que-%C3%A9-a-camada-de-dados-ou-data-layer-80f37fa3429c). A motivação para a elaboração desta função é a não dependências de bibliotecas de mercado, como o jQuery, com o intuito de não depender da instalação das mesmas nos ambientes tagueados. Ao executar a função, um objeto com as funções facilitadoras será retornado.
+The `wrap` function provides several facilitating functions for interactions with the DOM in order to standardize and make data collection compatible in environments without the concept of [data layer](https://blog.dp6.com.br/o-que-%C3%A9-a-camada-de-dados-ou-data-layer-80f37fa3429c). The motivation for the elaboration of this function is the non-dependence of market libraries, such as jQuery, in order not to depend on their installation in tagged environments. When executing the function, an object with the facilitating functions will be returned.
 
-##### Argumentos
+##### Arguments
 
-- `elm` String, elemento HTML ou Array de elementos HTML.
-  - String: o texto é utilizado como seletor CSS, criando um encapsulamento com todos os elementos que cruzarem com o seletor.
-  - Elemento HTML, NodeList ou array de Elementos HMTL: serão utilizados os elementos supridos como base para o encapsulamento.
+- `elm` String, HTML element or Array of HTML elements.
+   - String: the text is used as a CSS selector, creating an encapsulation with all the elements that cross the selector.
+   - HTML Element, NodeList or array of HTML Elements: the supplied elements will be used as a base for the encapsulation.
 
-##### Retorno
+##### Return
 
-- **Object**: Encapsulamento com funções facilitadoras.
+- **Object**: Encapsulation with facilitating functions.
 
-##### Exemplos de código
+##### Code example
 
 ```javascript
 // Apenas um elemento
-easyCollect.safeFn('Nome da Tag', function(collect) {
-  collect.on('mousedown', '#botaoX', function() {
+easyCollect.safeFn('Tag Name', function(collect) {
+  collect.on('mousedown', '#buttonX', function() {
     var text = collect.wrap(this).text({ sanitize: true });
-    collect.event('Categoria', 'Ação', 'Label_' + text);
+    collect.event('Category', 'Action', 'Label_' + text);
   });
 });
 
 // Múltiplos elementos
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   var urls = collect.wrap('a');
-  console.log(urls.nodes); // Array de nodes a.
+  console.log(urls.nodes); // Array of nodes a.
 });
 ```
 
-### Objeto Wrap
+### Object Wrap
 
-Objeto gerado pela função wrap, inclui diversas funções que ajudam na manipulação do DOM. As funções facilitadoras contidas neste objeto tem como objetivo diminuir a verbosidade do código JavaScript e evitar o uso de bibliotecas dependentes dos ambientes tagueados.
+Object generated by the wrap function, includes several functions that help in DOM manipulation. The facilitating functions contained in this object aim to reduce JavaScript code verbosity and avoid the use of libraries dependent on tagged environments.
 
-#### Atributo nodes
+#### Nodes Attribute
 
-Array de elementos HTML ou [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) que será a base das funções.
+Array of HTML elements or [NodeList](https://developer.mozilla.org/en-US/docs/Web/API/NodeList) that will be the basis of the functions.
 
 #### hasClass(className, opts)
 
-Função que verifica se o elemento HTML tem a classe passada por parâmetro.
+Function that checks if the HTML element has the class passed by parameter.
 
-##### Argumentos
+##### Arguments
 
-- `className`: String do nome da classe a ser batida com o elemento.
+- `className`: String of the name of the class to be matched with the element.
 
-- `opts` (opcional): Objeto com variáveis para configuração da função hasClass. \* `toArray`: Caso o valor seja true, retorna o array de resultados relacionados à comparação.
+- `opts` (optional): Object with variables for setting the hasClass function. \* `toArray`: If the value is true, returns the array of results related to the comparison.
 
-##### Retorno
+##### Return
 
-- **Boolean** ou **Array de Boolean**: Caso o parâmetro `opts`seja informado com o atributo `toArray`recebendo o valor true, o retorno da função será o array o boolean de elementos encontrados. Caso somente o parâmetro `className` seja informado, a função retorno true ou false se encontrar ou não algum elemento com a classe especificada.
+- **Boolean** or **Array of Boolean**: If the `opts` parameter is informed with the `toArray` attribute receiving the value true, the function will return the array or boolean of found elements. If only the `className` parameter is informed, the function returns true or false whether or not it finds an element with the specified class.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on('mousedown', '.button', function() {
     if (collect.wrap(this).hasClass('myClass')) {
-      collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+      collect.event('MyCategory', 'MyAction', 'MyLabel');
     }
   });
 });
@@ -501,29 +522,29 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### log(type, message, object)
 
-Um wrapper ao redor do Console nativo. Criado para garantir que execute apenas durante Debug Mode e apenas se console[type] existir.
+A wrapper around the Native Console. Created to ensure it runs only during Debug Mode and only if console[type] exists.
 
-##### Argumentos
+##### Arguments
 
-- `type` Tipo de console a ser realizado. Pode ser qualquer tipo suportado pelo console: `log`, `warn`, `error`, `table`, `group`...
+- `type` Type of console to be realized. Can be any type supported by the console: `log`, `warn`, `error`, `table`, `group`...
 
-- `message` Texto a ser enviado para o console.
+- `message` Text to be sent to the console.
 
-- `object` (opcional): Qualquer objeto com mais detalhes do que deve ser enviado para o método escolhido.
+- `object` (optional): Any object with more details than should be sent to the chosen method.
 
-##### Retorno
+##### Return
 
-- **undefined**: Nenhum retorno é enviado ou deverá ser esperado após a execução desta função.
+- **undefined**: No return is sent or should be expected after executing this function.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on('mousedown', '.button', function() {
     if (collect.wrap(this).hasClass('myClass')) {
-      collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+      collect.event('MyCategory', 'MyAction', 'MyLabel');
     } else {
-      collect.log('log', 'Classe "myClass" não encontrada');
+      collect.log('log', 'Class "myClass" not found');
     }
   });
 });
@@ -531,25 +552,25 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### matches(selector, reduce)
 
-Função que verifica se o elemento HTML confere com o seletor.
+Function that checks if the HTML element matches the selector.
 
-##### Argumentos
+##### Arguments
 
-- `selector`String do seletor a ser batido com o elemento.
+- `selector`String of the selector to be matched with the element.
 
-- `opts` (opcional): Objeto com variáveis para configuração da função matches. \* `toArray`: Caso o valor seja true, retorna o array de resultados relacionados à comparação.
+- `opts` (optional): Object with variables for setting the matches function. \* `toArray`: If the value is true, returns the array of results related to the comparison.
 
-##### Retorno
+##### Return
 
-- **Boolean** ou **Array de Boolean**: Caso o parâmetro `opts`seja informado com o atributo `toArray`recebendo o valor true, o retorno da função será o array o boolean de elementos encontrados. Caso somente o parâmetro `selector` seja informado, a função retorno true ou false se encontrar ou não algum elemento com a classe especificada.
+- **Boolean** or **Array of Boolean**: If the `opts` parameter is informed with the `toArray` attribute receiving the value true, the function will return the array or boolean of found elements. If only the `selector` parameter is informed, the function returns true or false whether or not it finds an element with the specified class.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on('mousedown', '.button', function() {
     if (collect.wrap(this).matches('.myForm .button')) {
-      collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo');
+      collect.event('MyCategory', 'MyAction', 'MyLabel');
     }
   });
 });
@@ -557,47 +578,47 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### closest(selector)
 
-Para cada elemento no conjunto, obtenha o primeiro elemento que corresponde ao seletor, testando o próprio elemento e atravessando seus antepassados ​​na árvore [DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+For each element in the set, get the first element that matches the selector by testing the element itself and traversing its ancestors in the [DOM] tree(https://developer.mozilla.org/en-US/docs/Web/API /Document_Object_Model).
 
-##### Argumentos
+##### Arguments
 
-- `selector`: String do seletor CSS que baterá com o elemento HTML.
+- `selector`: CSS selector string that will match the HTML element.
 
-##### Retorno
+##### Return
 
-- **Wrap**: Um encapsulamento com os elementos que bateram com o seletor informado.
+- **Wrap**: An encapsulation with the elements that match the selected selector.
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   collect.on('mousedown', '.button', function() {
     var text = collect
       .wrap(this)
       .closest('div.parentDivWithText')
       .text({ sanitize: true, onlyFirst: true });
-    collect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo' + text);
+    collect.event('MyCategory', 'MyAction', 'MyLabel' + text);
   });
 });
 ```
 
 #### text(opt)
 
-Função que retorna o texto do elemento.
+Function that returns the text of the element.
 
-##### Argumentos
+##### Arguments
 
-- `opt`: Objeto com variáveis para configuração da função text.
-  - `sanitize`: Caso booleano `true`, utilizará o sanitize com as opções padrão. Caso seja um objeto, repassará as opções escolhidas ao sanitize interno.
-  - `onlyFirst`: Boolean que em caso de true retorna somente o texto direto do elemento e não de todos os seus filhos.
-  - `onlyText`: Boolean que em caso de true retorna o texto concatenado ao invés de um array de Strings.
+- `opt`: Object with variables to configure the text function.
+   - `sanitize`: If boolean `true`, will use sanitize with default options. If it is an object, it will pass the chosen options to the internal sanitize.
+   - `onlyFirst`: Boolean that in case of true returns only the direct text of the element and not of all its children.
+   - `onlyText`: Boolean that in case of true returns the concatenated text instead of an array of Strings.
 
-##### Retorno
+##### Return
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   var text = collect
     .wrap('#myId')
     .text({ sanitize: true, onlyFirst: true, onlyText: true });
@@ -611,18 +632,18 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### find(sel)
 
-Função que retorna um objeto Wrap de todos os elementos que batem com o seletor.
+Function that returns a Wrap object of all elements that match the selector.
 
-##### Argumentos
+##### Arguments
 
-- `sel`: String do seletor CSS que baterá com o elemento HTML.
+- `sel`: String of the CSS selector that will match the HTML element.
 
-##### Retorno
+##### Return
 
-##### Exemplo de código
+##### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   var text = collect
     .wrap('#myId')
     .find('.myClass')
@@ -633,33 +654,33 @@ easyCollect.safeFn('Nome da Tag', function(collect) {
 
 #### map(func, params)
 
-Função que executa um código para cada elemento. Possui o mesmo comportamento da API [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
+Function that executes code for each element. It has the same behavior as the [Map API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map).
 
-##### Argumentos
+##### Arguments
 
-- `func`: Função a ser executada, pode receber um parâmetro que será a referência do elemento iterado.
+- `func`: Function to be executed, it can receive a parameter that will be the reference of the iterated element.
 
-- `params`: Array de parâmetros utilizados na função.
+- `params`: Array of Parameters used in the function.
 
-#### Exemplo de código
+#### Code example
 
 ```javascript
-easyCollect.safeFn('Nome da Tag', function(collect) {
+easyCollect.safeFn('Tag Name', function(collect) {
   var sources = collect.wrap('img').map(function(elm) {
     return elm.src;
   });
-  console.log(sources); // Array com os valores do atributo src de cada elemento img.
+  console.log(sources); // Array with the src attribute values of each img element
 });
 ```
 
-#### Tamanho do Pacote
+#### Package size
 
-| Compactação         | Tamanho (KB) |
-| ------------------- | ------------ |
-| Sem compactação     | 14.71        |
-| Minificado pelo GTM | 7.14         |
-| Com GZip            | 2.72         |
+| Compression | Size (KB) |
+| -------------------- | ------------ |
+| No compression | 14.71 |
+| Minified by GTM | 7.14 |
+| With GZip | 2.72 |
 
-#### Créditos
+#### Credits
 
 **DP6 Koopas !!!**

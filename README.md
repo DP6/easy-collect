@@ -19,37 +19,45 @@
   </a>
 </p>
 
-## 1. Para que serve?
 
-O _Easy Collect_ tem como objetivo facilitar a implementação, a manutenção e a padronização de *tags* no contexto de *digital analytics*.
+### Available Languages
 
-Um exemplo dos esforços envolvidos no suporte à padronização está na implementação de funções similares às da biblioteca _jQuery_, comumente utilizada em projetos de tagueamento. Deste modo, mesmo na ausência desta, será possível garantir o padrão e qualidade da coleta dos dados (Consultar a tabela de compatibilidade). Caso a _jQuery_ exista, o _Easy Collect_ simplesmente delega a execução para ela, ou seja, o código nos dois casos será o mesmo.
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/README.md)
+- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/README-pt.md)
 
-Resumindo, o utilize o _Easy Collect_ para:
+---
 
-- Ter acesso à funções de manipulação do DOM sem depender da _jQuery_;
-- Enviar automaticamente alertas e eventos para o _Google Analytics_ indicando possíveis erros de JavaScript no tagueamento;
-- Funções simplificadas para coleta de dados;
-- Padronização do código das tags.
+## 1. What is it for?
 
-### 1.1. Estendendo o Easy Collect
+Easy Collect aims to facilitate the implementation, maintenance and standardization of *tags* in the context of *digital analytics*.
 
-Um dos principais conceitos do _Easy Collect_ é a manutenção de sua API com o versionamento básico [SemVer](https://semver.org/). Para isso, recomendamos que a expansão de sua API para situações específicas, ou seja, utilizadas em projetos com particularidades que não irão se repetir, seja feita através do objeto `fn`.
+An example of the efforts involved in supporting standardization is the implementation of functions similar to the functions of the _jQuery_ library, commonly used in tagging projects. In this way, even in the absence of this, it will be possible to guarantee the standard and quality of data collection (See the compatibility table). If _jQuery_ exists, _Easy Collect_ simply delegates execution to it. The code in both cases will be the same.
 
-#### Objeto `fn`
+Use _Easy Collect_ to:
 
-Se trata de uma variável global dentro do escopo do objeto _Easy Collect_, visando agrupar as funções que não pertencem ao escopo atual do projeto.
+- Have access to DOM manipulation functions without relying on _jQuery_;
+- Automatically send alerts and events to _Google Analytics_ indicating possible JavaScript errors in the tagging;
+- Simplified functions for data collection;
+- Standardization of tag code.
+
+### 1.1. Understanding the library
+
+One of the main concepts of _Easy Collect_ is the maintenance of its API through a basic versioning [SemVer](https://semver.org/). For specific situations that will not happen again, we recommend expanding your API through the `fn` object.
+
+#### The Object `fn`
+
+It's a global variable within the scope of the _Easy Collect_ object, in order to group functions that do not belong to the current scope of the project.
 
 ```javascript
-easyCollect.fn.minhaFuncao = function(name) {
+easyCollect.fn.myFunction = function(name) {
   console.log(name);
 };
-easyCollect.fn.minhaFuncao('DP6'); // DP6
+easyCollect.fn.myFunction('DP6'); // DP6
 ```
 
-### 1.2. Compatibilidade
+### 1.2. Compatibility
 
-O _Easy Collect_ depende da função nativa `querySelectorAll`. Os navegadores com suporte a essa funcionalidade são:
+_Easy Collect_ depends on the native `querySelectorAll` function. The browsers that support this functionality are:
 
 | Chrome | Firefox | IE  | Opera | Safari |
 | ------ | ------- | --- | ----- | ------ |
@@ -57,24 +65,24 @@ O _Easy Collect_ depende da função nativa `querySelectorAll`. Os navegadores c
 
 ## 2. Tag Managers
 
-Inicialmente, na versão 1.0, a biblioteca dá suporte para o _Google Tag Manager_ com envio de dados para o _Google Analytics_, mas está planejado o suporte para demais ferramentas do mercado também.
+Initially, in version 1.0, the library supports _Google Tag Manager_ with sending data to _Google Analytics_. It's planned to support other tools on the market as well.
 
 ### 2.1. Google Tag Manager
 
-- [Documento de Referência Técnica](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
-- [Configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+- [Technical Reference Document](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
+- [GTM Configuration](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
 
-## 3. Como contribuir
+## 3. How to contribute
 
-Pull requests são bem-vindos! Nós vamos adorar ajuda para evoluir esse modulo. Sinta-se livre para navegar por _open issues_ buscando por algo que possa fazer. Caso tenha uma nova _feature_ ou _bug_, por favor abra uma nova _issue_ para ser acompanhada pelo nosso time.
+Pull requests welcome! We would love some help to evolve this module. Feel free to search for open issues. If there's a new feature or bug, please open a new issue, so our team can follow up.
 
-### 3.1 Requisitos obrigatórios
+### 3.1 Prerequirements
 
-Só serão aceito as contribuições que estiverem seguindo os seguintes requisitos:
+It will only be accepted contributions that follows the below requirements:
 
-- [Padrão de commit](https://www.conventionalcommits.org/en/v1.0.0/)
+- [Commit pattern](https://www.conventionalcommits.org/en/v1.0.0/)
 
-## Suporte:
+## Support
 
 **DP6 Koopa-troopa Team**
 
