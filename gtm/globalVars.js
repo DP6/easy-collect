@@ -17,7 +17,8 @@ var options = {
   gtmCleanup: function (gtmId) {
     collect.setDataLayer('ecommerce', undefined);
     collect.setDataLayer('noInteraction', undefined);
-  }
+  },
+  customNameGA4Event: 'ga4_event'
 };
 
 var internal = {
@@ -29,6 +30,7 @@ var collect = {
   init: init,
   pageview: pageview,
   event: event,
+  ga4Event: ga4Event,
   timing: timing,
   sanitize: sanitize,
   getDataLayer: getDataLayer,
