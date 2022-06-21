@@ -24,29 +24,29 @@
 
 ---
 
-# Configuração do GTM
+# Configuração do Google Tag Manager - Easy Collect + GAU
 
-Este documento descreve os passos para a utilização da biblioteca easy-collect em conjunto com o Google Tag Manager, e as configurações necessárias.
+Este documento descreve os passos para a utilização da biblioteca `easy-collect` em conjunto com o Google Tag Manager, e as configurações necessárias para coleta de dados via GAU.
 
-## Tag principal
+## 1. Tag principal
 
 O arquivo final, presente na pasta _build_, seja ele o arquivo de exemplo disponível neste repositório, ou uma versão personalizada gerada via Gulp, deverá ser copiado integralmente para uma Tag Custom HTML.
 
 Em configurações avançadas, a opção de executar uma única vez por página deverá ser selecionada.
 
-![Configuração uma por página](documentation-images/once_per_page.png)
+![Configuração uma por página](documentations/images/once_per_page.png)
 
 As tags que utilizarem o objeto easyCollect devem configurar esta tag principal como requisito na seção _sequência de tags_, para garantir que o objeto estará definido antes do uso.
 
-## Acionadores
+## 2. Acionadores
 
 Quatro acionadores do tipo _evento personalizado_ devem ser criados.
 
 Os nomes dos eventos serão os mesmos nomes utilizados para identificá-los na camada de dados: _gtm_dataQuality_event_, _ga_pageview_, _ga_event_ e _ga_timing_.
 
-![Triggers](documentation-images/event_name.png)
+![Triggers](documentations/images/event_name.png)
 
-## Tags de template
+## 3. Tags de template
 
 Quatro tags de Universal Analytics devem ser criadas, uma para cada acionador criado acima.
 
@@ -54,25 +54,25 @@ Estas tags devem ser preenchidas com as variáveis de camada de dados listadas n
 
 ### Template de Pageview (+ GA Settings)
 
-![Tag de template de Pageview](documentation-images/tag_pageview.png)
+![Tag de template de Pageview](documentations/images/tag_pageview.png)
 
 ### Template de Evento (+ GA Settings)
 
-![Tag de template de Evento](documentation-images/tag_event.png)
+![Tag de template de Evento](documentations/images/tag_event.png)
 
 ### Template de Timing (+ GA Settings)
 
-![Tag de template de Timing](documentation-images/tag_timing.png)
+![Tag de template de Timing](documentations/images/tag_timing.png)
 
 ### Template de Data Quality
 
-![Tag de template de DataQuality](documentation-images/tag_dataquality.png)
+![Tag de template de DataQuality](documentations/images/tag_dataquality.png)
 
 ### Template de GA Settings
 
-![Tag de template de GA Settings](documentation-images/var_gasettings.png)
+![Tag de template de GA Settings](documentations/images/var_gasettings.png)
 
-## Variáveis
+## 4. Variáveis
 
 As variáveis padrão _Container ID_ e _Debug Mode_ devem ser habilitadas, pois elas são utilizadas pelo código da _tag principal_.
 
@@ -113,4 +113,4 @@ function () {
 }
 ```
 
-![Tag de template de GA Settings](documentation-images/hit_callback.png)
+![Tag de template de GA Settings](documentations/images/hit_callback.png)

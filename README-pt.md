@@ -32,12 +32,15 @@ O _Easy Collect_ tem como objetivo facilitar a implementação, a manutenção e
 
 Um exemplo dos esforços envolvidos no suporte à padronização está na implementação de funções similares às da biblioteca _jQuery_, comumente utilizada em projetos de tagueamento. Deste modo, mesmo na ausência desta, será possível garantir o padrão e qualidade da coleta dos dados (Consultar a tabela de compatibilidade). Caso a _jQuery_ exista, o _Easy Collect_ simplesmente delega a execução para ela, ou seja, o código nos dois casos será o mesmo.
 
-Resumindo, o utilize o _Easy Collect_ para:
+**Recursos do _Easy Collect_:**
 
-- Ter acesso à funções de manipulação do DOM sem depender da _jQuery_;
-- Enviar automaticamente alertas e eventos para o _Google Analytics_ indicando possíveis erros de JavaScript no tagueamento;
+- Funções de manipulação do DOM sem depender da biblioteca _jQuery_;
 - Funções simplificadas para coleta de dados;
-- Padronização do código das tags.
+- Padronização de código das tags;
+- Envia automaticamente alertas de erros de JavaScript para o _Google Universal Analytics_;
+- Envia eventos para o _Google Analytics Universal_ e _Google Analytics 4_;
+
+**[Acesse aqui o "Documento de Referência Técnica"](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE-pt.md)**
 
 ### 1.1. Estendendo o Easy Collect
 
@@ -64,12 +67,14 @@ O _Easy Collect_ depende da função nativa `querySelectorAll`. Os navegadores c
 
 ## 2. Tag Managers
 
-Inicialmente, na versão 1.0, a biblioteca dá suporte para o _Google Tag Manager_ com envio de dados para o _Google Analytics_, mas está planejado o suporte para demais ferramentas do mercado também.
+A biblioteca dá suporte para o _Google Tag Manager_ com envio de dados para o _Google Analytics Universal (GAU)_ e _Google Analytics 4 (GA4)_.
 
 ### 2.1. Google Tag Manager
 
-- [Documento de Referência Técnica](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
-- [Configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+- [Guia de Implementação - Easy Collect + GTM + GAU](https://github.com/DP6/easy-collect/blob/master/gtm-config-gau-pt.md)
+- [Guia de Implementação - Easy Collect + GTM + GA4](https://github.com/DP6/easy-collect/blob/master/gtm-config-ga4-pt.md)
+- [Guia de Implementação - Easy Collect + GTM + GAU -> GA4 (Migração de Enhanced Ecommerce)](https://github.com/DP6/easy-collect/blob/master/gtm-config-gau-ga4-pt.md)
+
 
 ## 3. Como contribuir
 
