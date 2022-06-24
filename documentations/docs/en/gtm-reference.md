@@ -20,8 +20,8 @@
 
 ### Available Languages
 
-- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
-- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE-pt.md)
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-reference.md)
+- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-reference.md)
 
 ---
 
@@ -109,7 +109,7 @@
 
 > Easy Collect para o Google Tag Manager
 
-This document introduces the APIs and functionality developed to support Google Tag Manager (GTM). Some settings on the tool's side are important so that the code implemented in the Easy Collect tag has the expected behavior. More details about [here](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
+This document introduces the APIs and functionality developed to support Google Tag Manager (GTM). Some settings on the tool's side are important so that the code implemented in the Easy Collect tag has the expected behavior. More details about [here](https://github.com/DP6/easy-collect/blob/master/README.md).
 
 ## Options object
 
@@ -150,13 +150,13 @@ Use this optional function to start Easy Collect with options other than the def
 - `containerId` -- By default this is the GTM variable `{{Container ID}}`. If disabled, it is the empty string `''`.
    A string that should match the ID of the GTM container where _Easy Collect_ was configured (GTM-XXXXX).
 
-- `exceptionEvent` -- Por padrão `"gtm_dataQuality_event"`.
-  Uma string que identifica o evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
+- `exceptionEvent` -- By default `"gtm_dataQuality_event"`.
+  A string that identifies the event sent to the data layer if an exception occurs in the GTM code. This option supports the idea of ​​collecting for a Google Analytics property of [_Quality Assurance_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . To better understand the use of this configuration, [see GTM configuration documentation](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-gau.md).
 
-- `exceptionCategory` -- Por padrão `"GTM Exception"`.
-  Uma string que indica qual o value que deve ser preenchido na chave `"event_category"` do evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+- `exceptionCategory` -- By default `"GTM Exception"`.
+  A string that indicates which value should be filled in the `"event_category"` key of the event sent to the data layer in case an exception occurs in the GTM code. This option supports the idea of ​​collecting for a Google Analytics property of [_Quality Assurance_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . To better understand the usage of this configuration, [see GTM configuration documentation](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-gau.md)
 - `customNamePageview` -- By default `"ga_pageview"`.
-   A string that identifies the event sent to the data layer each time the `pageview` function (see below) is called.
+   The string that identifies the event sent to the data layer each time the `pageview` function (see below) is called.
 
 - `customNameEvent` -- By default `"ga_event"`.
    A string that identifies the event sent to the data layer each time the `event` function (see below) is called.

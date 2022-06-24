@@ -19,8 +19,8 @@
 
 ### Idiomas disponíveis
 
-- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
-- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE-pt.md)
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-reference.md)
+- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/gtm-reference.md)
 
 ---
 
@@ -109,7 +109,7 @@
 
 > Easy Collect para o Google Tag Manager
 
-Este documento introduz as APIs e funcionalidades desenvolvidas para o suporte ao Google Tag Manager (GTM). São importantes algumas configurações do lado da própria ferramenta para que o código implementado na tag do Easy Collect tenha o comportamento esperado. Mais detalhes sobre [aqui](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
+Este documento introduz as APIs e funcionalidades desenvolvidas para o suporte ao Google Tag Manager (GTM). São importantes algumas configurações do lado da própria ferramenta para que o código implementado na tag do Easy Collect tenha o comportamento esperado. Mais detalhes sobre [aqui](https://github.com/DP6/easy-collect/blob/master/README-pt.md).
 
 ## Objeto options
 
@@ -151,10 +151,10 @@ Utilize esta função, de caráter opcional, para inicializar o Easy Collect com
   Uma string que deve ser equivalente ao ID do contêiner do GTM onde o _Analytics Helper_ foi configurado (GTM-XXXXX).
 
 - `exceptionEvent` -- Por padrão `"gtm_dataQuality_event"`.
-  Uma string que identifica o evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md).
+  Uma string que identifica o evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau.md).
 
 - `exceptionCategory` -- Por padrão `"GTM Exception"`.
-  Uma string que indica qual o valor que deve ser preenchido na chave `"event_category"` do evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+  Uma string que indica qual o valor que deve ser preenchido na chave `"event_category"` do evento enviado à camada de dados caso ocorra alguma exceção no código do GTM. Esta opção suporta a ideia da coleta para uma propriedade do Google Analytics de [_Quality Assurence_](https://www.observepoint.com/blog/why-automate-your-web-analytics-qa/) . Para entender melhor o uso desta configuração, [consultar documentação de configuração do GTM](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau.md)
 
 - `customNamePageview` -- Por padrão `"ga_pageview"`.
   Uma string que identifica o evento enviado à camada de dados toda vez que a função `pageview` (ver abaixo) for chamada.

@@ -20,12 +20,12 @@
 
 ### Available Languages
 
-- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
-- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG-pt.md)
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-gau.md)
+- [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau.md)
 
 ---
 
-# GTM Configuration
+# Google Tag Manager Configuration - Easy Collect + Google Analytics Universal
 
 This document describe the steps to use the Easy Collect library with Google Tag Manager in addition to explaining all the necessary settings.
 
@@ -35,7 +35,7 @@ In the folder _build_ copy the `main.js` (either the example file available in t
 
 In _Advanced settings > Tag firing options_ choose "once per page".
 
-![One per page configuration](documentation-images/once_per_page.png)
+![One per page configuration](/documentations/images/once_per_page.png)
 
 Tags that use the `easyCollect` object in the HTML code must configure the previously created tag in _Advanced settings > Tag Sequencing_. This way it's assure that the object will be defined on the page before use.
 
@@ -45,7 +45,7 @@ Four triggers of type _custom event_ must be created.
 
 The event names will be the same names used to identify them in the data layer: _gtm\_dataQuality\_event_, _ga\_pageview_, _ga\_event_ and _ga\_timing_.
 
-![Triggers](documentation-images/event_name.png)
+![Triggers](/documentations/images/event_name.png)
 
 ## Template Tags
 
@@ -55,23 +55,23 @@ These tags must be populated with the data layer variables listed in the next se
 
 ### Pageview Template (+ GA Settings)
 
-![Pageview Template Tag](documentation-images/tag_pageview.png)
+![Pageview Template Tag](/documentations/images/tag_pageview.png)
 
 ### Event Template (+ GA Settings)
 
-![Event Template Tag](documentation-images/tag_event.png)
+![Event Template Tag](/documentations/images/tag_event.png)
 
 ### Timing Template (+ GA Settings)
 
-![Timing Template Tag](documentation-images/tag_timing.png)
+![Timing Template Tag](/documentations/images/tag_timing.png)
 
 ### Data Quality Template
 
-![Data Quality Template Tag](documentation-images/tag_dataquality.png)
+![Data Quality Template Tag](/documentations/images/tag_dataquality.png)
 
 ### GA Settings Template
 
-![GA Settings Variable](documentation-images/var_gasettings.png)
+![GA Settings Variable](/documentations/images/var_gasettings.png)
 
 ## Variables
 
@@ -113,4 +113,4 @@ function () {
 }
 ```
 
-![Tag de template de GA Settings](documentation-images/hit_callback.png)
+![Tag de template de GA Settings](/documentations/images/hit_callback.png)
