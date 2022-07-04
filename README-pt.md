@@ -40,7 +40,7 @@ Um exemplo dos esforços envolvidos no suporte à padronização está na implem
 - Envia automaticamente alertas de erros de JavaScript para o _Google Universal Analytics_;
 - Envia eventos para o _Google Analytics Universal_ e _Google Analytics 4_;
 
-**[Acesse aqui o "Documento de Referência Técnica"](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE-pt.md)**
+**[Acesse aqui o "Documento de Referência Técnica"](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-reference.md)**
 
 ### 1.1. Estendendo o Easy Collect
 
@@ -71,9 +71,9 @@ A biblioteca dá suporte para o _Google Tag Manager_ com envio de dados para o _
 
 ### 2.1. Google Tag Manager
 
-- [Guia de Implementação - Easy Collect + GTM + GAU](https://github.com/DP6/easy-collect/blob/master/gtm-config-gau-pt.md)
-- [Guia de Implementação - Easy Collect + GTM + GA4](https://github.com/DP6/easy-collect/blob/master/gtm-config-ga4-pt.md)
-- [Guia de Implementação - Easy Collect + GTM + GAU -> GA4 (Migração de Enhanced Ecommerce)](https://github.com/DP6/easy-collect/blob/master/gtm-config-gau-ga4-pt.md)
+- [Guia de Implementação - Easy Collect + GTM + GAU](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau.md)
+- [Guia de Implementação - Easy Collect + GTM + GA4](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-ga4.md)
+- [Guia de Implementação - Easy Collect + GTM + GAU -> GA4 (Migração de Enhanced Ecommerce)](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau-ga4.md)
 
 
 ## 3. Como contribuir

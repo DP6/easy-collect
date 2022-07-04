@@ -33,12 +33,15 @@ Easy Collect aims to facilitate the implementation, maintenance and standardizat
 
 An example of the efforts involved in supporting standardization is the implementation of functions similar to the functions of the _jQuery_ library, commonly used in tagging projects. In this way, even in the absence of this, it will be possible to guarantee the standard and quality of data collection (See the compatibility table). If _jQuery_ exists, _Easy Collect_ simply delegates execution to it. The code in both cases will be the same.
 
-Use _Easy Collect_ to:
+** _Easy Collect_ Features:**
 
-- Have access to DOM manipulation functions without relying on _jQuery_;
-- Automatically send alerts and events to _Google Analytics_ indicating possible JavaScript errors in the tagging;
+- DOM manipulation functions without relying on the _jQuery_ library;
 - Simplified functions for data collection;
-- Standardization of tag code.
+- Tag code standardization;
+- Automatically sends JavaScript error alerts to _Google Universal Analytics_;
+- Sends events to _Google Analytics Universal_ and _Google Analytics 4_;
+
+**[Access here the "Technical Reference Document"](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-reference.md)**
 
 ### 1.1. Understanding the library
 
@@ -69,8 +72,9 @@ Initially, in version 1.0, the library supports _Google Tag Manager_ with sendin
 
 ### 2.1. Google Tag Manager
 
-- [Technical Reference Document](https://github.com/DP6/easy-collect/blob/master/README-GTM-REFERENCE.md)
-- [GTM Configuration](https://github.com/DP6/easy-collect/blob/master/README-GTM-CONFIG.md)
+- [Implementation Guide - Easy Collect + GTM + GAU](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau.md)
+- [Implementation Guide - Easy Collect + GTM + GA4](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-ga4.md)
+- [Implementation Guide - Easy Collect + GTM + GAU -> GA4 (Enhanced Ecommerce Migration)](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-gau-ga4.md )
 
 ## 3. How to contribute
 

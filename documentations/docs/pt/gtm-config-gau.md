@@ -103,8 +103,11 @@ Caso utilize a opção waitQueue (habilitada por padrão), a seguinte variável 
 function () {
   return function () {
     easyCollect.internal.sentPageview = true;
+    while (easyCollect.internal.ga4Queue.length) {
+      easyCollect.ga4Event.apply(easyCollect, easyCollect.internal.ga4Queue.shift());
+    }
     while (easyCollect.internal.eventQueue.length) {
-      easyCollect.event.apply(easyCollect, easyCollect.internal.eventQueue.shift());
+        easyCollect.event.apply(easyCollect, easyCollect.internal.eventQueue.shift());
     }
     while (easyCollect.internal.timingQueue.length) {
       easyCollect.timing.apply(easyCollect, easyCollect.internal.timingQueue.shift());
