@@ -414,11 +414,13 @@
     }
   }
 
+  internal.ga4Queue = [];
+
   function ga4Event(event_name, params, ecommerce, id) {
     try {
       if (internal.sentPageview === false && options.waitQueue) {
         log('Info', 'The event (' + arguments + ') has been add to the queue');
-        return internal.eventQueue.push(arguments);
+        return internal.ga4Queue.push(arguments);
       }
 
       var _params;
