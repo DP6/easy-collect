@@ -32,9 +32,6 @@
 
 ## 3. Criação das Tags
 
-- tag easy collect
-- implementaçao gau para uso do easy collect (seguir doc gau)
-- implementação ga4
 
 ## 4. Templates
 
