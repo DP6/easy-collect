@@ -32,8 +32,6 @@
 
 ## 3. Criação das Tags
 
-(aqui descrever as tags que serão implementadas)
-
 - tag easy collect
 - implementaçao gau para uso do easy collect (seguir doc gau)
 - implementação ga4
