@@ -89,6 +89,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 -------
 -------
 ## **2. Templates**  
+<br/>
 
   A utilização do template permite automatização na coleta dos eventos GA4, para que os desenvolvedores tenham a um click todos os paramentros recomendados pelo Google ja configurados na tag *event_name*, havendo necessidade de coleta de parametros adicionais em alguma tag especifica é possivel alterar apenas a tag do respectivo evento , e caso seja necessario adicionar um parâmetro em todas as tags que o coletam , o mesmo pode ser adicionado na tag *event_name*, lembrando que atualmente ha um **limite de 25 parâmetros** por evento  
 
@@ -98,14 +99,15 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
 
 
+![instal_template](https://user-images.githubusercontent.com/103647128/193691208-0196f8db-8bc9-4a11-aa9b-06fd757b6eed.gif)
 
 
-  
+  <br/>
 
 ###  **2.1. Template para coleta somente de  *Eventos Recomendados***   
 
     
-    
+
   Acompanhe na tabela os parametros base para a coleta de eventos recomendados  e seus respectivos eventos:
 
 |Eventos Recomendados |   Parâmetros  |      |     |      | | | | | 
@@ -128,6 +130,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Baixar Template</a>
 
 
+<br/>
 
 ### **2.2. Template para coleta somente de *Enhanced Ecommerce***
 
@@ -141,6 +144,7 @@ Possiveis parametros para a coleta de eventos Enhaced Ecommerce
 
 
 
+<br/>
 
 ### **2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados***
 
