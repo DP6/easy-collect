@@ -85,7 +85,15 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
   
 ## **2. Templates**  
 
-o que faz, por que utilizar ,  video de template , 
+  A utilização do template permite automatização na coleta dos eventos GA4, para que os desenvolvedores tenham a um click todos os paramentros recomendados pelo Google ja configurados na tag *event_name*, havendo necessidade de coleta de parametros adicionais em alguma tag especifica é possivel alterar apenas a tag do respectivo evento , e caso seja necessario adicionar um parâmetro em todas as tags que o coletam , o mesmo pode ser adicionado na tag *event_name*, lembrando que atualmente ha um **limite de 25 parâmetros** por evento  
+
+
+
+ Como demonstrativo de instalação utilizaremos o template de eventos recomendados, porém , o processo de configuração abrange todos os demais templates.
+
+
+
+
 
   
 
