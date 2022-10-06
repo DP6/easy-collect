@@ -29,12 +29,12 @@ Este documento descreve os passos para a utilização da biblioteca Easy-collect
 
 ## **Indice**
 
-*[1. Configuração do Easy Collect](#1.Configuracao-do-Easy-Collect)  
+[1. Configuração do Easy Collect](#1.Configuracao-do-Easy-Collect)  
  * [1.1 Tag Easy Collect](#1.1Tag-Easy-Collect)  
  * [1.2 Tag de Configuração GA4](#1.2-tag-de-configuracao-ga4)  
-  * [1.3 Tag coleta Event](#1.3-Tag-coleta-Event)  
+ * [1.3 Tag coleta Event](#1.3-Tag-coleta-Event)  
 
-*[2. Templates](#2.-Templates)  
+[2. Templates](#2.-Templates)  
  * [2.1. Template para coleta somente de *Eventos Recomendados*](#2.1.-Template-para-coleta-somente-de-Eventos-Recomendados)      
  * [2.2. Template para coleta somente de *Enhanced Ecommerce*](#2.2.-Template-para-coleta-somente-de-*Enhanced-Ecommerce*)    
  * [2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*](#-2.3.-Template-para-coleta-de-*Enhanced-Ecommerce*-e-*Eventos-Recomendados*)   
@@ -82,12 +82,9 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
 ![ga4Event](https://user-images.githubusercontent.com/103647128/188487990-35e419f8-26c6-43ce-aaf0-2d18006b5a46.gif)
 
+--------------------- 
 
 
-
-  
--------
--------
 ## **2. Templates**  
 <br/>
 
@@ -111,8 +108,8 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 
   Acompanhe na tabela os parâmetros base para a coleta de eventos recomendados:
 
-|Eventos|   Parâmetros  |      |     |      | | | | | 
-|---------------------|-----------|------|------|------|------|------|------|------|
+|Eventos|   Parâmetros  |      |     |
+|---------------------|-----------|------|------|
 |earn_virtual_currency| virtual_currency_name|
 |join_group|group_id |
 |login|method
