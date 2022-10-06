@@ -28,18 +28,18 @@
 Este documento descreve os passos para a utilização da biblioteca Easy-collect em conjunto com o Google Tag Manager, e as configurações necessárias para coleta de dados via GA4.
 
 ## **Indice**
-  [1. Configuração do Easy Collect](#1.Configuração-do-Easy-Collect)  
-   * [1.1 Tag Easy Collect](#1.1Tag-Easy-Collect)  
-   * [1.2 Tag de Configuração GA4](#1.2-Tag-de-Configuração-GA4)  
-   * [1.3 Tag coleta Event](#1.3-Tag-coleta-Event)  
 
-      
-  [2. Templates](#2.-Templates)  
-   * [2.1. Template para coleta somente de *Eventos Recomendados*](###2.1.-Template-para-coleta-somente-de-*Eventos-Recomendados*)      
-   * [2.2. Template para coleta somente de *Enhanced Ecommerce*](###2.2.-Template-para-coleta-somente-de-*Enhanced-Ecommerce*)    
-   * [2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*](###-2.3.-Template-para-coleta-de-*Enhanced-Ecommerce*-e-*Eventos-Recomendados*)   
+*[1. Configuração do Easy Collect](#1.Configuracao-do-Easy-Collect)  
+ * [1.1 Tag Easy Collect](#1.1Tag-Easy-Collect)  
+ * [1.2 Tag de Configuração GA4](#1.2-tag-de-configuracao-ga4)  
+  * [1.3 Tag coleta Event](#1.3-Tag-coleta-Event)  
 
-## **1. Configuração do Easy Collect** ⚙️
+*[2. Templates](#2.-Templates)  
+ * [2.1. Template para coleta somente de *Eventos Recomendados*](#2.1.-Template-para-coleta-somente-de-Eventos-Recomendados)      
+ * [2.2. Template para coleta somente de *Enhanced Ecommerce*](#2.2.-Template-para-coleta-somente-de-*Enhanced-Ecommerce*)    
+ * [2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*](#-2.3.-Template-para-coleta-de-*Enhanced-Ecommerce*-e-*Eventos-Recomendados*)   
+
+## **1.Configuração do Easy Collect** ⚙️
 
 A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag Manager, lembrando que a configuração pode ser manual ou via template disponivel no tópico (preencher depois).
 
@@ -58,7 +58,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 ![Animação](https://user-images.githubusercontent.com/103647128/188479825-6de619dc-413a-47c2-8054-55bdc13ac0ce.gif)
 
 
-## **1.2 Tag de Configuração GA4**
+##  **1.2 Tag de Configuração GA4**
 
 
  O template utilizado será o padrão de configuração do GA4 , nele deverá ser inserido o id referente ao fluxo de dados/ data streams desejado .
@@ -105,42 +105,56 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
   <br/>
 
 ###  **2.1. Template para coleta somente de  *Eventos Recomendados***   
-
+<br/>
     
+Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Aqui.</a>   
 
-  Acompanhe na tabela os parametros base para a coleta de eventos recomendados  e seus respectivos eventos:
+  Acompanhe na tabela os parâmetros base para a coleta de eventos recomendados:
 
-|Eventos Recomendados |   Parâmetros  |      |     |      | | | | | 
+|Eventos|   Parâmetros  |      |     |      | | | | | 
 |---------------------|-----------|------|------|------|------|------|------|------|
 |earn_virtual_currency| virtual_currency_name|
 |join_group|group_id |
 |login|method
-| purchase | currency|value|items|transaction_id|affiliation|coupon|shipping|tax|
 |refund | currency|value|transaction_id
 |search|	search_term|
 | select_content | content_type|item_id|
 |share	|method | item_id| content_type|
 |sign_up	|method |
-|spend_virtual_currency	|item_name |value|virtual_currency_name|
+|spend_virtual_currency	|virtual_currency_name|value|item_name|
 |tutorial_begin	|
 |tutorial_complete|
-
-
-
-<a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Baixar Template</a>
-
+------------------------------
 
 <br/>
 
 ### **2.2. Template para coleta somente de *Enhanced Ecommerce***
+<br/>
+ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_ecommerce.json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
 
-Possiveis parametros para a coleta de eventos Enhaced Ecommerce
+   Acompanhe na tabela os parâmetros base para a coleta de eventos enhanced ecommerce:
 
 
-    Parametros coletados:  *ecommerce.items, ecommerce.currency, ecommerce.value, ecommerce.transaction_id, ecommerce.search_term, ecommerce.virtual_currency_name, ecommerce.payment_type, ecommerce.affiliation, ecommerce.shipping, ecommerce.tax, ecommerce.item_list_id, ecommerce.item_list_name, ecommerce.creative_name, ecommerce.creative_slot, ecommerce.location_id, ecommerce.coupon*
-
-<a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_ecommerce.json" dowload="template_ecommerce.json" type="application/json"> Baixar Template</a>
-
+|Eventos |   Parâmetros  |      |     |      | | | | | 
+|---------------------|-----------|------|------|------|------|------|------|------|
+|add_payment_info| | currency|value|items|
+|add_shipping_info|currency| value | items|
+|add_to_cart|currency|value |items|
+|add_to_wishlist|currency|value |items|
+|begin_checkout|currency|value |items| coupon| payment_type
+|generate_lead|currency|value |
+|purchase |currency|affiliation|items|transaction_id|value|coupon|shipping|tax|
+|refund|currency|value |items|transaction_id|affiliation|coupon|shipping|tax|
+|remove_from_cart|currency|value |items|
+|select_item|items|item_list_id|item_list_name|
+|select_promotion|items|creative_name|creative_slot|location_id|promotion_id|promotion_name|
+|view_cart|currency|value |items|
+|view_item|currency|value |items|
+|view_item_list|items|item_list_id|item_list_name|
+|view_promotion|items|creative_name|creative_slot|location_id|promotion_id|promotion_name|
+------------------------
+   
+     
 
 
 
@@ -148,11 +162,41 @@ Possiveis parametros para a coleta de eventos Enhaced Ecommerce
 
 ### **2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados***
 
+<br/>
+
+Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_ecommerce_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Aqui.</a>   
+
+ Acompanhe na tabela os parâmetros base para a coleta de eventos recomendados e enhanced ecommerce:
 
 
-    Parametros coletados:  *currency, value, virtual_currency_name, group_id, method, search_term, content_type, item_id, item_name, ecommerce.items, ecommerce.currency, ecommerce.value, ecommerce.transaction_id, ecommerce.search_term, ecommerce.virtual_currency_name, ecommerce.payment_type, ecommerce.affiliation, ecommerce.shipping, ecommerce.tax, ecommerce.item_list_id, ecommerce.item_list_name, ecommerce.creative_name, ecommerce.creative_slot, ecommerce.location_id, ecommerce.coupon*  
+|Eventos  |   Parâmetros  |      |     |      | | | | | 
+|---------------------|-----------|------|------|------|------|------|------|------|
+|add_payment_info| | currency|value|items|
+|add_shipping_info|currency| value | items|
+|add_to_cart|currency|value |items|
+|add_to_wishlist|currency|value |items|
+|begin_checkout|currency|value |items| coupon| payment_type
+|generate_lead|currency|value |
+|purchase |currency|affiliation|items|transaction_id|value|coupon|shipping|tax|
+|refund|currency|value |items|transaction_id|affiliation|coupon|shipping|tax|
+|remove_from_cart|currency|value |items|
+|select_item|items|item_list_id|item_list_name|
+|select_promotion|items|creative_name|creative_slot|location_id|promotion_id|promotion_name|
+|view_cart|currency|value |items|
+|view_item|currency|value |items|
+|view_item_list|items|item_list_id|item_list_name|
+|view_promotion|items|creative_name|creative_slot|location_id|promotion_id|promotion_name|
+|earn_virtual_currency| virtual_currency_name|
+|join_group|group_id |
+|login|method
+|refund | currency|value|transaction_id
+|search|	search_term|
+| select_content | content_type|item_id|
+|share	|method | item_id| content_type|
+|sign_up	|method |
+|spend_virtual_currency	|virtual_currency_name|value|item_name|
+|tutorial_begin	|
+|tutorial_complete|
+-----------------------
 
 
-
-
-<a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_ecommerce_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Baixar Template</a>
