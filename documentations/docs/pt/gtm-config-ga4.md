@@ -19,32 +19,38 @@
 
 ### Idiomas disponíveis
 
-- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-ga4.md)
+- [Read this page in English](https://
+github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-ga4.md)
 - [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-ga4.md)
 
 ---
-# **Configuração do Google Tag Manager - Easy Collect + GA4**
+# Configuração do Google Tag Manager - Easy Collect + GA4
 
 Este documento descreve os passos para a utilização da biblioteca Easy-collect em conjunto com o Google Tag Manager, e as configurações necessárias para coleta de dados via GA4.
 
 ## **Indice**
 
-[1. Configuração do Easy Collect](#1.Configuracao-do-Easy-Collect)  
- * [1.1 Tag Easy Collect](#1.1Tag-Easy-Collect)  
- * [1.2 Tag de Configuração GA4](#1.2-tag-de-configuracao-ga4)  
- * [1.3 Tag coleta Event](#1.3-Tag-coleta-Event)  
+ * [1-Configuração do Easy Collect](#1-configuração-do-easy-collect)  
+    * [1.1 Tag Easy Collect](#1-1-tag-easy-collect)  
+    * [1.2 Tag de Configuração GA4](#1-2-tag-de-configuração-ga4)  
+    * [1.3 Tag coleta Event](#1-3-tag-coleta-event)    
 
-[2. Templates](#2.-Templates)  
- * [2.1. Template para coleta somente de *Eventos Recomendados*](#2.1.-Template-para-coleta-somente-de-Eventos-Recomendados)      
- * [2.2. Template para coleta somente de *Enhanced Ecommerce*](#2.2.-Template-para-coleta-somente-de-*Enhanced-Ecommerce*)    
- * [2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*](#-2.3.-Template-para-coleta-de-*Enhanced-Ecommerce*-e-*Eventos-Recomendados*)   
+    <br/>
 
-## **1.Configuração do Easy Collect** ⚙️
+ * [2. Templates](#templates)  
+   * [2.1. Template para coleta somente de *Eventos Recomendados*](#2-1-template-para-coleta-somente-de-eventos-recomendados)      
+   * [2.2. Template para coleta somente de *Enhanced Ecommerce*](#2-2-template-para-coleta-somente-de-enhanced-ecommerce)    
+   * [2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*](#2-3-template-para-coleta-de-enhanced-ecommerce-e-eventos-recomendados)     
+
+<br/>
+
+## 1 Configuração do Easy Collect ⚙️
 
 A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag Manager, lembrando que a configuração pode ser manual ou via template disponivel no tópico (preencher depois).
 
+<br/>
 
-## **1.1 Tag Easy Collect**       
+## 1-1 Tag Easy Collect     
 
   O arquivo há ser instalado está presente na pasta [build](https://github.com/DP6/easy-collect/blob/master/build/gtm/main.js), seja ele o arquivo de exemplo disponível neste repositório, ou uma versão personalizada gerada via Gulp, deverá ser copiado integralmente para uma Tag Custom HTML.
  
@@ -52,23 +58,33 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
  - Em configurações avançadas, a opção de executar uma única vez por página deverá ser selecionada.
 
+<br/>
 
 **Tag Modelo**
 
-![Animação](https://user-images.githubusercontent.com/103647128/188479825-6de619dc-413a-47c2-8054-55bdc13ac0ce.gif)
+<img src='https://user-images.githubusercontent.com/103647128/188479825-6de619dc-413a-47c2-8054-55bdc13ac0ce.gif'   height="400" width="700"> 
 
 
-##  **1.2 Tag de Configuração GA4**
+
+<br/>
+
+##  1-2 Tag de Configuração GA4
 
 
- O template utilizado será o padrão de configuração do GA4 , nele deverá ser inserido o id referente ao fluxo de dados/ data streams desejado .
+  O template utilizado será o padrão de configuração do GA4 , nele deverá ser inserido o id referente ao fluxo de dados/ data streams desejado .
   - Caso o site a ser taggueado seja SPA a opção de envio de evento de visualização de página pode ser ignorada, caso o site seja MPA o uso deste fica a criterio da estrategia de coleta.
+<br/>
 
 **Tag Modelo**
-![ga4Configuration](https://user-images.githubusercontent.com/103647128/188482596-6cad3a91-8953-413d-b9d8-1a7b68d32607.gif)
 
 
-## **1.3 Tag coleta Event**
+<img src="https://user-images.githubusercontent.com/103647128/188482596-6cad3a91-8953-413d-b9d8-1a7b68d32607.gif" height="400" width="700">
+
+
+
+<br/>
+
+## 1-3 Tag coleta Event
 
 
   Deve-se utilizar o template padrão de eventos do Google Tag Manager para coleta de eventos GA4 com as seguintes configurações:
@@ -77,15 +93,18 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
   - Uma variavel de evento personalizado anexada, contendo: *{{event_name}}*
   - O acionador sera um evento personalizado contendo: *{{ga4_event}}*
   - É possivel fazer o envio de parametros para coleta de *enhanced ecommerce* e *eventos personalizados* ja nesta tag de event, exemplos destas configurações estão disponiveis em (colocar os links dos templates, e o link da doc do google de parametros obrigatorios)
+<br/>
 
   **Tag Modelo**
 
-![ga4Event](https://user-images.githubusercontent.com/103647128/188487990-35e419f8-26c6-43ce-aaf0-2d18006b5a46.gif)
+<img src="https://user-images.githubusercontent.com/103647128/188487990-35e419f8-26c6-43ce-aaf0-2d18006b5a46.gif" height="400" width="700">
+
+<br/>
 
 --------------------- 
 
 
-## **2. Templates**  
+##  Templates
 <br/>
 
   A utilização do template permite automatização na coleta dos eventos GA4, para que os desenvolvedores tenham a um click todos os paramentros recomendados pelo Google ja configurados na tag *event_name*, havendo necessidade de coleta de parametros adicionais em alguma tag especifica é possivel alterar apenas a tag do respectivo evento , e caso seja necessario adicionar um parâmetro em todas as tags que o coletam , o mesmo pode ser adicionado na tag *event_name*, lembrando que atualmente ha um **limite de 25 parâmetros** por evento  
@@ -95,13 +114,13 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
  Como demonstrativo de instalação utilizaremos o template de eventos recomendados, porém , o processo de configuração abrange todos os demais templates.
 
 
+<img src="https://user-images.githubusercontent.com/103647128/193691208-0196f8db-8bc9-4a11-aa9b-06fd757b6eed.gif" height="400" width="700">
 
-![instal_template](https://user-images.githubusercontent.com/103647128/193691208-0196f8db-8bc9-4a11-aa9b-06fd757b6eed.gif)
 
 
   <br/>
 
-###  **2.1. Template para coleta somente de  *Eventos Recomendados***   
+### 2-1 Template para coleta somente de  *Eventos Recomendados*   
 <br/>
     
 Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_recomendados.json" dowload="template_ecommerce.json" type="application/json"> Aqui.</a>   
@@ -125,7 +144,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 
 <br/>
 
-### **2.2. Template para coleta somente de *Enhanced Ecommerce***
+### 2-2 Template para coleta somente de *Enhanced Ecommerce*
 <br/>
  Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055/easy-collect/master/docs/pt/template_ecommerce.json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
 
@@ -157,7 +176,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 
 <br/>
 
-### **2.3. Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados***
+### 2-3 Template para coleta  de *Enhanced Ecommerce* e *Eventos Recomendados*
 
 <br/>
 
