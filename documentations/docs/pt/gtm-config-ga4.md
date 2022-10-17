@@ -213,14 +213,5 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 |spend_virtual_currency	|virtual_currency_name|value|item_name|
 |tutorial_begin	|
 |tutorial_complete|
-
-<style>
-  .table{
-    max-width: 100vw;
-    width:500px;
-  }
-
-  </style>
-</div>
 -----------------------
 
