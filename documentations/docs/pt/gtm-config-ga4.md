@@ -214,10 +214,6 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 |tutorial_begin	|
 |tutorial_complete|
 
-</div>
------------------------
-
-
 <style>
   .table{
     max-width: 100vw;
@@ -225,3 +221,6 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
   }
 
   </style>
+</div>
+-----------------------
+
