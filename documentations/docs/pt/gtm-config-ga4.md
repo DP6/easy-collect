@@ -19,8 +19,7 @@
 
 ### Idiomas disponíveis
 
-- [Read this page in English](https://
-github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-ga4.md)
+- [Read this page in English](https://github.com/DP6/easy-collect/blob/master/documentations/docs/en/gtm-config-ga4.md)
 - [Leia esta página em Português](https://github.com/DP6/easy-collect/blob/master/documentations/docs/pt/gtm-config-ga4.md)
 
 ---
