@@ -1,0 +1,815 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2022-10-17 23:53:13",
+    "containerVersion": {
+        "path": "accounts/6006949291/containers/93989605/versions/0",
+        "accountId": "6006949291",
+        "containerId": "93989605",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6006949291/containers/93989605",
+            "accountId": "6006949291",
+            "containerId": "93989605",
+            "name": "Template - Recomendados",
+            "publicId": "GTM-T74KQJV",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1663781734645",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6006949291/containers/93989605/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true
+            },
+            "tagIds": [
+                "GTM-T74KQJV"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "tagId": "3",
+                "name": "Easy Collect -Core",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n    ;\n(function () {\n  'use strict';\n  var hasOwnProperty = Object.prototype.hasOwnProperty;\n  var jQuery = window.jQuery;\n  var fn = {};\n  \n  var options = {\n    collectName: 'easyCollect',\n    dataLayerName: 'dataLayer',\n    debug: ({{Debug Mode}} || false),\n    waitQueue: true, //put 'false' if only GA4 is implemented\n    historyParams: [],\n    containerId: ({{Container ID}} || ''),\n    exceptionEvent: 'gtm_dataQuality_event',\n    exceptionCategory: 'GTM Exception',\n    customNamePageview: 'ga_pageview',\n    customNameEvent: 'ga_event',\n    customNameGA4Event: 'ga4_event',\n    currencyCode: 'BRL',\n    customNameTiming: 'ga_timing',\n    errorSampleRate: 1,\n    gtmCleanup: function (gtmId) {\n      collect.setDataLayer('ecommerce', undefined);\n      collect.setDataLayer('eventNoInteraction', undefined);\n\n      for (var i = 0; i < options.historyParams.length; i++) { //For GA4\n        collect.setDataLayer(options.historyParams[i], undefined);\n      }\n    }\n  };\n  \n  var internal = {\n      sentPageview: false\n  };\n  \n  var collect = {\n    internal: internal,\n    init: init,\n    pageview: pageview,\n    event: event,\n    ga4Event: ga4Event,\n    timing: timing,\n    sanitize: sanitize,\n    getDataLayer: getDataLayer,\n    setDataLayer: setDataLayer,\n    cookie: cookie,\n    getKey: getKey,\n    safeFn: safeFn,\n    fn: fn,\n    options: options\n  };\n  \n  function closest(elm, seletor) {\n    if ('closest' in elm) return elm.closest(seletor);\n    if (typeof jQuery === 'function') return jQuery(elm).closest(seletor)[0];\n  \n    var parent = elm.parentNode;\n  \n    while (parent != document) {\n      if (matches(parent, seletor)) {\n        return parent;\n      }\n      parent = parent.parentNode;\n    }\n    return undefined;\n  }\n  \n  function getCookie(key) {\n    key = '; ' + key + '=';\n    var cookie = '; ' + document.cookie;\n    var index = cookie.indexOf(key);\n    var end;\n    if (index === -1) {\n      return '';\n    }\n    cookie = cookie.substring(index + key.length);\n    end = cookie.indexOf(';');\n    return window.unescape(end === -1 ? cookie : cookie.substring(0, end));\n  }\n  \n  function setCookie(name, value, opts) {\n\n    var cookie = name + '=' + window.escape(value);\n  \n    if (opts.exdays) {\n      var exdate = new Date();\n      exdate.setDate(exdate.getDate() + opts.exdays);\n      cookie += '; expires=' + exdate.toUTCString();\n      delete opts.exdays;\n    }\n  \n    if (!opts.samesite) {\n      cookie += '; samesite=none; secure';\n    }\n  \n    for (var optKey in opts) {\n      cookie += \"; \" + optKey;\n      var optValue = opts[optKey];\n      if (optValue !== true) {\n        cookie += \"=\" + optValue;\n      }\n    }\n  \n    return (document.cookie = cookie);\n  }\n  \n  function cookie(name, value, opts) {\n    if (typeof value === 'undefined')\n      return getCookie(name);\n  \n    return setCookie(name, value, opts);\n  }\n  \n  function delegate(id, event, selector, oldHandler, parent) {\n    var method, elm, handler;\n    if (typeof jQuery === 'function') {\n      elm = jQuery(parent || document);\n      handler = safeFn(id, oldHandler, {\n        event: event,\n        selector: selector,\n        immediate: false\n      });\n      if (typeof elm.on === 'function') {\n        return elm.on(event, selector, handler);\n      } else if (typeof elm.delegate === 'function') {\n        return elm.delegate(selector, event, handler);\n      }\n    }\n  \n    if (typeof parent === 'string') {\n      parent = document.querySelectorAll(parent);\n    }\n  \n    if (typeof document.addEventListener === 'function') {\n      method = 'addEventListener';\n    } else {\n      method = 'attachEvent';\n      event = 'on' + event;\n    }\n  \n    handler = function(e) {\n      for (\n        var target = e.target; target && target !== this; target = target.parentNode\n      ) {\n        if (matches(target, selector)) {\n          var handler = safeFn(id, oldHandler, {\n            event: event,\n            selector: selector,\n            immediate: false\n          });\n          handler.call(target, e);\n          break;\n        }\n      }\n    };\n  \n    if (Object.prototype.toString.call(parent) === '[object NodeList]') {\n      for (var parentIndex = 0; parentIndex <= parent.length - 1; parentIndex++) {\n        (parent[parentIndex] || document)[method](event, handler, false);\n      }\n    } else {\n      (parent || document)[method](event, handler, false);\n    }\n  }\n  \n  function find(element, selector) {\n    return element.querySelectorAll(selector);\n  }\n  \n  function flatten(arrs) {\n    var currentArray, currentElement, i, j;\n    var result = [];\n  \n    if (arrs.length === 1) return arrs[0];\n  \n    while (arrs.length > 0) {\n      currentArray = arrs.shift();\n      for (i = 0; currentArray.length > i; i++) {\n        currentElement = currentArray[i];\n        j = 0;\n        while (j < result.length && currentElement !== result[j]) {\n          j += 1;\n        }\n        if (j === result.length) result.push(currentElement);\n      }\n    }\n  \n    return result;\n  }\n  \n  function getKey(key, opt_root) {\n    if (!key || typeof key !== 'string') return undefined;\n  \n    var result = opt_root || window;\n    var splitKey = key.split('.');\n  \n    for (var i = 0; i < splitKey.length && result != null; i++) {\n      if (has(result, splitKey[i])) {\n        result = result[splitKey[i]];\n      } else {\n        return undefined;\n      }\n    }\n    return result;\n  }\n  \n  function has(obj, key) {\n    return hasOwnProperty.call(obj, key);\n  }\n  \n  function hasClass(e, className) {\n    if ('classList' in e) return e.classList.contains(className);\n  \n    return new RegExp('\\\\b' + className + '\\\\b').test(e.className);\n  }\n  \n  function init(opt_options) {\n    options = merge(options, opt_options);\n    expose();\n  }\n  \n  function internalMap(elms, func, exArgs) {\n    var elm, args;\n    var ret = [];\n    for (var index = 0; index < elms.length; index++) {\n      elm = elms[index];\n      if (elm instanceof HTMLElement === false)\n        throw 'internalMap: Esperado elemento HTML';\n      args = [elm].concat(exArgs);\n      ret.push(func.apply(null, args));\n    }\n    return ret;\n  }\n  \n  function log(type, info, obj) {\n    if (options.debug && typeof getKey('console.' + type) === 'function') {\n      console[type](info, obj);\n    }\n  }\n  \n  function matches(elm, seletor) {\n    if ('matches' in elm) return elm.matches(seletor);\n    if (typeof jQuery === 'function') return jQuery(elm).is(seletor);\n  \n    var elms = elm.parentNode.querySelectorAll(seletor);\n  \n    for (var i = 0; i < elms.length; i++) {\n      if (elms[i] === elm) {\n        return true;\n      }\n    }\n    return false;\n  }\n  \n  function merge(obj, obj2) {\n    if (obj2) {\n      for (var key in obj2) {\n        if (has(obj2, key)) {\n          obj[key] = obj2[key];\n        }\n      }\n    }\n    return obj;\n  }\n  \n  function on(id, event, selector, oldCallback, parent) {\n    var i, array, elm, callback;\n  \n    if (parent) return delegate(id, event, selector, oldCallback, parent);\n  \n    callback = safeFn(id, oldCallback, {\n      event: event,\n      selector: selector,\n      immediate: false\n    });\n  \n    if (typeof jQuery === 'function') {\n      elm = jQuery(selector);\n  \n      if (typeof elm.on === 'function') {\n        return elm.on(event, callback);\n      } else if (typeof elm.bind === 'function') {\n        return elm.bind(event, callback);\n      }\n    }\n  \n    if (typeof selector === 'string') {\n      array = document.querySelectorAll(selector);\n    } else if (typeof selector.length === 'undefined' || selector === window) {\n      array = [selector];\n    } else {\n      array = selector;\n    }\n  \n    for (i = 0; i < array.length; i++) {\n      elm = array[i];\n  \n      if (typeof elm.addEventListener === 'function') {\n        elm.addEventListener(event, callback);\n      } else {\n        elm.attachEvent('on' + event, callback);\n      }\n    }\n  }\n  \n  function reduceBool(arr) {\n    var i;\n    for (i = 0; i < arr.length; i++) {\n      if (arr[i]) return true;\n    }\n    return false;\n  }\n  \n  function sanitize(str, opts) {\n    var split, i, spacer;\n  \n    if (!str) return '';\n    opts = opts || {};\n    spacer = typeof opts.spacer === 'string' ? opts.spacer : '_';\n    str = str\n      .toLowerCase()\n      .replace(/^\\s+/, '')\n      .replace(/\\s+$/, '')\n      .replace(/\\s+/g, '_')\n      .replace(/[áàâãåäæª]/g, 'a')\n      .replace(/[éèêëЄ€]/g, 'e')\n      .replace(/[íìîï]/g, 'i')\n      .replace(/[óòôõöøº]/g, 'o')\n      .replace(/[úùûü]/g, 'u')\n      .replace(/[ç¢©]/g, 'c')\n      .replace(/[^a-z0-9_\\-]/g, '_');\n  \n    if (opts.capitalized) {\n      split = str.replace(/^_+|_+$/g, '').split(/_+/g);\n      for (i = 0; i < split.length; i++) {\n        if (split[i]) split[i] = split[i][0].toUpperCase() + split[i].slice(1);\n      }\n      return split.join(spacer);\n    }\n  \n    return str.replace(/^_+|_+$/g, '').replace(/_+/g, spacer);\n  }\n  \n  function text(elm, opts) {\n    var i, text, children;\n    opts = opts || {};\n  \n    if (opts.onlyFirst) {\n      children = elm.childNodes;\n      text = '';\n  \n      for (i = 0; i < children.length; i++) {\n        if (children[i].nodeType === 3) {\n          text += children[i].nodeValue;\n        }\n      }\n    } else {\n      text = elm.innerText || elm.textContent || elm.innerHTML.replace(/<[^>]+>/g, '');\n    }\n  \n    return opts.sanitize ? sanitize(text, opts.sanitize) : text;\n  }\n  \n  function getDataLayer(key) {\n    try {\n      return google_tag_manager[options.containerId].dataLayer.get(key);\n    } catch ($$e) {\n      log('warn', 'Function getDataLayer: Object ' + key + ' is not defined');\n    }\n  }\n  \n  function setDataLayer(key, value) {\n    try {\n      return google_tag_manager[options.containerId].dataLayer.set(key, value);\n    } catch ($$e) {\n      log('warn', $$e);\n    }\n  }\n  \n  internal.eventQueue = [];\n  \n  function event(category, action, label, value, object, id) {\n    try {\n      if (internal.sentPageview === false && options.waitQueue) {\n        log('Info', 'The event (' + arguments + ') has been add to the queue');\n        return internal.eventQueue.push(arguments);\n      }\n  \n      if (value != null && typeof value === 'object') {\n        object = value;\n        value = undefined;\n      } else {\n        object = object || {};\n      }\n  \n      var result = {\n        event: options.customNameEvent,\n        eventCategory: category,\n        eventAction: action,\n        eventValue: value,\n        eventLabel: label,\n        _tag: id\n      };\n  \n      if (options.gtmCleanup) {\n        result.eventCallback = options.gtmCleanup;\n      }\n  \n      log('info', result, object);\n      window[options.dataLayerName].push(merge(result, object));\n    } catch (err) {\n      log('warn', err);\n    }\n  }\n\n  internal.ga4Queue = [];\n\n  function ga4Event(event_name, params, ecommerce, id) {\n    try {\n      if (internal.sentPageview === false && options.waitQueue) {\n        log('Info', 'The event (' + arguments + ') has been add to the queue');\n        return internal.ga4Queue.push(arguments);\n      }\n\n      var _params;\n      if (ecommerce) ecommerce = mapGa4Ecommerce(ecommerce, event_name);\n      else _params = mapGa4Ecommerce(params, event_name);\n\n      var result = {\n        event: options.customNameGA4Event,\n        event_name: event_name,\n        _tag: id\n      };\n  \n      if (options.gtmCleanup) {\n        options.historyParams = Object.keys(params || {}); //pensar se é util\n        result.eventCallback = options.gtmCleanup;\n      }\n\n      var data = _params ? _params : merge(params || {}, ecommerce || {});\n      log('info', data);\n      window[options.dataLayerName].push(merge(result, data));\n    } catch (err) {\n      log('warn', err);\n    }\n  }\n\n  function mapGa4Ecommerce(ecommerce, event_name) {\n\n    var mapEcommerce = {\n      promotions: function(promotions) {\n        var items = [];\n        for (var i = 0; i < promotions.length; i++) {\n          var item = {};\n          promotions[i].name && (item.promotion_name = promotions[i].name);\n          promotions[i].id && (item.promotion_id = promotions[i].id);\n          promotions[i].creative && (item.creative_name = promotions[i].creative);\n          promotions[i].position && (item.creative_slot = promotions[i].position);\n          items.push(item);\n        }\n        return items;\n      },\n      impressions: function(ecommerce) {\n        var ec = mapEcommerce.items(ecommerce.impressions);\n        return ec;\n      },\n      items: function(products) {\n        var items = [];\n        for (var i = 0; i < products.length; i++) {\n          var item = {};\n          products[i].id && (item.item_id = products[i].id);\n          products[i].name && (item.item_name = products[i].name);\n          products[i].brand && (item.item_brand = products[i].brand);\n          products[i].price && (item.price = products[i].price);\n          products[i].variant && (item.item_variant = products[i].variant);\n          products[i].quantity && (item.quantity = products[i].quantity);\n          products[i].coupon && (item.coupon = products[i].coupon);\n          products[i].list && (item.item_list_name = products[i].list);\n          products[i].position && (item.index = products[i].position);\n  \n          var category = products[i].category ? products[i].category.split('/') : [];\n          for (var j = 0; j < category.length; j++) {\n            if (j === 0) item.item_category = category[j];\n            else item['item_category' + (j + 1)] = category[j];\n          }\n          items.push(item);\n        }\n        return items;\n      }\n    }\n  \n    if (!ecommerce) return undefined;\n    if(ecommerce.hasOwnProperty('items')) return ecommerce;\n\n    var ec = { 'ecommerce' : { } };\n    ec.ecommerce.currency = ecommerce.currencyCode ? ecommerce.currencyCode : options.currencyCode;\n  \n    if (ecommerce.hasOwnProperty('click')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.click.products);\n      if (ecommerce.click.hasOwnProperty('actionField'))\n        ecommerce.click.actionField.list && (ec.ecommerce.item_list_name = ecommerce.click.actionField.list)\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('detail')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.detail.products);\n      if (ecommerce.detail.hasOwnProperty('actionField'))\n        ecommerce.detail.actionField.list && (ec.ecommerce.item_list_name = ecommerce.detail.actionField.list)\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('add')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.add.products);\n      if (ecommerce.add.hasOwnProperty('actionField'))\n        ecommerce.add.actionField.list && (ec.ecommerce.item_list_name = ecommerce.add.actionField.list)\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('remove')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.remove.products);\n      if (ecommerce.remove.hasOwnProperty('actionField'))\n        ecommerce.remove.actionField.list && (ec.ecommerce.item_list_name = ecommerce.remove.actionField.list)\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('checkout')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.checkout.products);\n      \n      if (event_name == 'add_shipping_info' && ecommerce.checkout.hasOwnProperty('actionField')) {\n        ecommerce.checkout.actionField.option && (ec.ecommerce.shipping_tier = ecommerce.checkout.actionField.option);\n      }\n      else if (event_name == 'add_payment_info' && ecommerce.checkout.hasOwnProperty('actionField')) {\n        ecommerce.checkout.actionField.option && (ec.ecommerce.payment_type = ecommerce.checkout.actionField.option);\n      }\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('purchase')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.purchase.products);\n      if (ecommerce.purchase.hasOwnProperty('actionField')) {\n        ecommerce.purchase.actionField.id && (ec.ecommerce.transaction_id = ecommerce.purchase.actionField.id);\n        ecommerce.purchase.actionField.affiliation && (ec.ecommerce.affiliation = ecommerce.purchase.actionField.affiliation);\n        ecommerce.purchase.actionField.revenue && (ec.ecommerce.value = ecommerce.purchase.actionField.revenue);\n        ecommerce.purchase.actionField.tax && (ec.ecommerce.tax = ecommerce.purchase.actionField.tax);\n        ecommerce.purchase.actionField.shipping && (ec.ecommerce.shipping = ecommerce.purchase.actionField.shipping);\n        ecommerce.purchase.actionField.coupon && (ec.ecommerce.coupon = ecommerce.purchase.actionField.coupon);\n      }\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('refund')) {\n      ec.ecommerce.items = mapEcommerce.items(ecommerce.refund.products);\n      if (ecommerce.refund.hasOwnProperty('actionField'))\n        ecommerce.refund.actionField.id && (ec.ecommerce.transaction_id = ecommerce.refund.actionField.id);\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('impressions')) {\n      ec.ecommerce.items = mapEcommerce.impressions(ecommerce);\n      ecommerce.list && (ec.ecommerce.item_list_name = ecommerce.list);\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('promoView')) {\n      var _promotions = ecommerce.promoView.promotions ? ecommerce.promoView.promotions : [];\n      ec.ecommerce.items = mapEcommerce.promotions(_promotions)\n      return ec;\n    }\n    if (ecommerce.hasOwnProperty('promoClick')) {\n      var _promotions = ecommerce.promoClick.promotions ? ecommerce.promoClick.promotions : [];\n      ec.ecommerce.items = mapEcommerce.promotions(_promotions)\n      return ec;\n    }\n  \n    return undefined;\n  }\n  \n  function localCollectFactory(conf) {\n    var localCollect = {\n      ga4Event: function (event_name, params, ecommerce) {\n        return ga4Event(event_name, params, ecommerce, conf.id);\n      },\n      event: function(category, action, label, value, object) {\n        return event(category, action, label, value, object, conf.id);\n      },\n      pageview: function(path, object) {\n        return pageview(path, object, conf.id);\n      },\n      timing: function(category, variable, value, label, object) {\n        return timing(category, variable, value, label, object, conf.id);\n      },\n      safeFn: function(id, callback, opts) {\n        return safeFn(conf.id + ':' + id, callback, opts);\n      },\n      on: function(event, selector, callback, parent) {\n        return on(conf.id, event, selector, callback, parent);\n      },\n      delegate: function(event, selector, callback) {\n        return on(conf.id, event, selector, callback, document.body);\n      },\n      wrap: function(elm) {\n        if (typeof elm === 'object' && elm._type === 'wrapped') {\n          return elm;\n        } else if (typeof elm === 'string') {\n          elm = find(window.document, elm);\n        } else if (elm instanceof HTMLElement) {\n          elm = [elm];\n        } else if ((elm instanceof Array || elm instanceof NodeList) === false) {\n          throw 'wrap: Esperado receber seletor, elemento HTML, NodeList ou Array';\n        }\n  \n        return {\n          _type: 'wrapped',\n          hasClass: function(className, opts) {\n            var arr = internalMap(elm, hasClass, [className]);\n            return opts && opts.toArray ? arr : reduceBool(arr);\n          },\n          matches: function(selector, opts) {\n            var arr = internalMap(elm, matches, [selector]);\n            return opts && opts.toArray ? arr : reduceBool(arr);\n          },\n          closest: function(selector) {\n            return localCollect.wrap(internalMap(elm, closest, [selector]));\n          },\n          text: function(opts) {\n            var arr = internalMap(elm, text, [opts]);\n            return opts && opts.toArray ? arr : arr.join('');\n          },\n          find: function(sel) {\n            var elms = internalMap(elm, find, [sel]);\n            return localCollect.wrap(flatten(elms));\n          },\n          map: function(func, params) {\n            return internalMap(elm, func, params);\n          },\n          on: function(event, parent, callback) {\n            if (typeof parent === 'function') {\n              on(conf.id, event, elm, parent);\n            } else {\n              on(conf.id, event, parent, callback, elm);\n            }\n          },\n          nodes: elm\n        };\n      },\n      sanitize: sanitize,\n      getDataLayer: getDataLayer,\n      setDataLayer: setDataLayer,\n      cookie: cookie,\n      getKey: getKey,\n      id: conf.id,\n      args: conf.args,\n      fn: fn,\n      log: log,\n      _event: conf.event,\n      _selector: conf.selector\n    };\n    return localCollect;\n  }\n  \n  function pageview(path, object, id) {\n    try {\n      var result = {\n        event: options.customNamePageview,\n        path: path,\n        _tag: id\n      };\n  \n      if (options.gtmCleanup) {\n        result.eventCallback = options.gtmCleanup;\n      }\n  \n      log('info', result, object);\n      window[options.dataLayerName].push(merge(result, object));\n    } catch (err) {\n      log('warn', err);\n    }\n  }\n  \n  function safeFn(id, callback, opt) {\n    opt = opt || {};\n    var safe = function() {\n      try {\n        callback.call(\n          this === window ? null : this,\n          localCollectFactory({\n            id: id,\n            args: arguments,\n            event: (typeof opt.event === 'string' && opt.event) || undefined,\n            selector: (typeof opt.selector === 'string' && opt.selector) || undefined\n          })\n        );\n      } catch ($$e) {\n        if (!options.debug) {\n          if (Math.random() <= options.errorSampleRate) {\n            window[options.dataLayerName].push({\n              event: options.exceptionEvent,\n              dataQuality: {\n                category: options.exceptionCategory,\n                action: id,\n                label: String($$e),\n                event: (typeof opt.event === 'string' && opt.event) || undefined,\n                selector: (typeof opt.selector === 'string' && opt.selector) || undefined\n              }\n            });\n          }\n        } else {\n          log('warn', 'Exception: ', {\n            exception: $$e,\n            tag: id,\n            event: (typeof opt.event === 'string' && opt.event) || undefined,\n            selector: (typeof opt.selector === 'string' && opt.selector) || undefined\n          });\n        }\n      }\n    };\n  \n    return opt.immediate === false ? safe : safe();\n  }\n  internal.timingQueue = [];\n  \n  function timing(category, variable, value, label, object, id) {\n    try {\n      if (internal.sentPageview === false && options.waitQueue) {\n        log(\n          'Info',\n          'The timing event (' + arguments + ') has been add to the queue'\n        );\n        return internal.timingQueue.push(arguments);\n      }\n  \n      object = object || {};\n  \n      var result = {\n        event: options.customNameTiming,\n        timingCategory: category,\n        timingVariable: variable,\n        timingValue: value,\n        timingLabel: label,\n        _tag: id\n      };\n  \n      if (options.gtmCleanup) {\n        result.eventCallback = options.gtmCleanup;\n      }\n  \n      log('info', result, object);\n      window[options.dataLayerName].push(merge(result, object));\n    } catch (err) {\n      log('warn', err);\n    }\n  }\n  function expose() {\n    if (window[options.collectName] && !options.overwriteCollect) return;\n    window[options.collectName] = collect;\n  }\n  \n  expose();\n  \n})();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1663781896001",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "tagId": "4",
+                "name": "GA4 - CONFIG",
+                "type": "gaawc",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendPageView",
+                        "value": "true"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "enableSendToServerContainer",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "G-0123456789"
+                    }
+                ],
+                "fingerprint": "1663781991674",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "tagId": "22",
+                "name": "GA4 - event",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "{{event_name}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventParameters",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "currency"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{currency}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "value"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{value}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "virtual_currency_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{virtual_currency_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "group_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{group_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "method"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{method}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "search_term"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{search_term}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "content_type"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{content_type}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "item_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{item_id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "item_name"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{item_name}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "transaction_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{transaction_id}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TAG_REFERENCE",
+                        "key": "measurementId",
+                        "value": "GA4 - CONFIG"
+                    }
+                ],
+                "fingerprint": "1666050752861",
+                "firingTriggerId": [
+                    "13"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "triggerId": "13",
+                "name": "ga4_event",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "ga4_event"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1663782685696"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "5",
+                "name": "event_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "event_name"
+                    }
+                ],
+                "fingerprint": "1663782065697",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "6",
+                "name": "currency",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "currency"
+                    }
+                ],
+                "fingerprint": "1663959063990",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "7",
+                "name": "value",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "value"
+                    }
+                ],
+                "fingerprint": "1663959118855",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "8",
+                "name": "method",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "method"
+                    }
+                ],
+                "fingerprint": "1663782472959",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "9",
+                "name": "search_term",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "search_term"
+                    }
+                ],
+                "fingerprint": "1663782490819",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "10",
+                "name": "virtual_currency_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "virtual_currency_name"
+                    }
+                ],
+                "fingerprint": "1663959151795",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "11",
+                "name": "group_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "group_id"
+                    }
+                ],
+                "fingerprint": "1663782621857",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "12",
+                "name": "ecommerce.items",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.items"
+                    }
+                ],
+                "fingerprint": "1663782644504",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "14",
+                "name": "ecommerce.coupon",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.coupon"
+                    }
+                ],
+                "fingerprint": "1663782727738",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "15",
+                "name": "ecommerce.transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.transaction_id"
+                    }
+                ],
+                "fingerprint": "1663782767493",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "16",
+                "name": "ecommerce.affiliation",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.affiliation"
+                    }
+                ],
+                "fingerprint": "1663782923421",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "17",
+                "name": "ecommerce.shipping",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.shipping"
+                    }
+                ],
+                "fingerprint": "1663783097373",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "18",
+                "name": "ecommerce.tax",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ecommerce.tax"
+                    }
+                ],
+                "fingerprint": "1663783161251",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "19",
+                "name": "content_type",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "content_type"
+                    }
+                ],
+                "fingerprint": "1663783229610",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "20",
+                "name": "item_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_id"
+                    }
+                ],
+                "fingerprint": "1663783246813",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "21",
+                "name": "item_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "item_name"
+                    }
+                ],
+                "fingerprint": "1663783262399",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "23",
+                "name": "transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transaction_id"
+                    }
+                ],
+                "fingerprint": "1666050749081",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "DEBUG_MODE",
+                "name": "Debug Mode"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "type": "CONTAINER_ID",
+                "name": "Container ID"
+            }
+        ],
+        "fingerprint": "1666050793034",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6006949291/containers/93989605/versions/0?apiLink=version"
+    }
+}

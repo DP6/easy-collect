@@ -149,7 +149,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 
    Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos enhanced ecommerce:
 
-<div class="table" >
+
 
 |Eventos |   Parâmetros  |      |     |      | | | | | 
 |---------------------|-----------|------|------|------|------|------|------|------|
@@ -168,8 +168,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/Milene055
 |view_item|currency|value |items|
 |view_item_list|items|item_list_id|item_list_name|
 |view_promotion|items|creative_name|creative_slot|location_id|promotion_id|promotion_name|
-</div>
-------------------------
+-------------
    
      
 
