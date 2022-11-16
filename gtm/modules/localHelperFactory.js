@@ -1,24 +1,27 @@
 function localCollectFactory(conf) {
   var localCollect = {
-    event: function(category, action, label, value, object) {
+    ga4Event: function (event_name, params, ecommerce) {
+      return ga4Event(event_name, params, ecommerce, conf.id);
+    },
+    event: function (category, action, label, value, object) {
       return event(category, action, label, value, object, conf.id);
     },
-    pageview: function(path, object) {
+    pageview: function (path, object) {
       return pageview(path, object, conf.id);
     },
-    timing: function(category, variable, value, label, object) {
+    timing: function (category, variable, value, label, object) {
       return timing(category, variable, value, label, object, conf.id);
     },
-    safeFn: function(id, callback, opts) {
+    safeFn: function (id, callback, opts) {
       return safeFn(conf.id + ':' + id, callback, opts);
     },
-    on: function(event, selector, callback, parent) {
+    on: function (event, selector, callback, parent) {
       return on(conf.id, event, selector, callback, parent);
     },
-    delegate: function(event, selector, callback) {
+    delegate: function (event, selector, callback) {
       return on(conf.id, event, selector, callback, document.body);
     },
-    wrap: function(elm) {
+    wrap: function (elm) {
       if (typeof elm === 'object' && elm._type === 'wrapped') {
         return elm;
       } else if (typeof elm === 'string') {
@@ -31,29 +34,29 @@ function localCollectFactory(conf) {
 
       return {
         _type: 'wrapped',
-        hasClass: function(className, opts) {
+        hasClass: function (className, opts) {
           var arr = internalMap(elm, hasClass, [className]);
           return opts && opts.toArray ? arr : reduceBool(arr);
         },
-        matches: function(selector, opts) {
+        matches: function (selector, opts) {
           var arr = internalMap(elm, matches, [selector]);
           return opts && opts.toArray ? arr : reduceBool(arr);
         },
-        closest: function(selector) {
+        closest: function (selector) {
           return localCollect.wrap(internalMap(elm, closest, [selector]));
         },
-        text: function(opts) {
+        text: function (opts) {
           var arr = internalMap(elm, text, [opts]);
           return opts && opts.toArray ? arr : arr.join('');
         },
-        find: function(sel) {
+        find: function (sel) {
           var elms = internalMap(elm, find, [sel]);
           return localCollect.wrap(flatten(elms));
         },
-        map: function(func, params) {
+        map: function (func, params) {
           return internalMap(elm, func, params);
         },
-        on: function(event, parent, callback) {
+        on: function (event, parent, callback) {
           if (typeof parent === 'function') {
             on(conf.id, event, elm, parent);
           } else {

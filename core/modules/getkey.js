@@ -7,19 +7,19 @@
  * root deste elemento.
  */
 function getKey(key, opt_root) {
-    if (!key || typeof key !== 'string') return undefined;
+  if (!key || typeof key !== 'string') return undefined;
 
-    var result = opt_root || window;
-    var splitKey = key.split('.');
+  var result = opt_root || window;
+  var splitKey = key.split('.');
 
-    for (var i = 0; i < splitKey.length && result != null; i++) {
-        if (has(result, splitKey[i])) {
-            result = result[splitKey[i]];
-        } else {
-            return undefined;
-        }
+  for (var i = 0; i < splitKey.length && result != null; i++) {
+    if (has(result, splitKey[i])) {
+      result = result[splitKey[i]];
+    } else {
+      return undefined;
     }
-    return result;
+  }
+  return result;
 }
 
 module.exports = getKey;

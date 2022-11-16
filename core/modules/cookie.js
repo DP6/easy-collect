@@ -24,7 +24,6 @@ function getCookie(key) {
  * @param {*} opts Opções do cookie, como vencimento e domínio
  */
 function setCookie(name, value, opts) {
-
   var cookie = name + '=' + window.escape(value);
 
   if (opts.exdays) {
@@ -39,10 +38,10 @@ function setCookie(name, value, opts) {
   }
 
   for (var optKey in opts) {
-    cookie += "; " + optKey;
+    cookie += '; ' + optKey;
     var optValue = opts[optKey];
     if (optValue !== true) {
-      cookie += "=" + optValue;
+      cookie += '=' + optValue;
     }
   }
 
@@ -60,8 +59,7 @@ function setCookie(name, value, opts) {
  * @param {*} opts Opções do cookie, como vencimento e domínio
  */
 function cookie(name, value, opts) {
-  if (typeof value === 'undefined')
-    return getCookie(name);
+  if (typeof value === 'undefined') return getCookie(name);
   return setCookie(name, value, opts);
 }
 

@@ -1,15 +1,14 @@
 function safeFn(id, callback, opt) {
   opt = opt || {};
-  var safe = function() {
+  var safe = function () {
     try {
       callback.call(
         this === window ? null : this,
-        localEasyCollectFactory({
+        localCollectFactory({
           id: id,
           args: arguments,
           event: (typeof opt.event === 'string' && opt.event) || undefined,
-          selector:
-            (typeof opt.selector === 'string' && opt.selector) || undefined
+          selector: (typeof opt.selector === 'string' && opt.selector) || undefined
         })
       );
     } catch ($$e) {
@@ -22,8 +21,7 @@ function safeFn(id, callback, opt) {
               action: id,
               label: String($$e),
               event: (typeof opt.event === 'string' && opt.event) || undefined,
-              selector:
-                (typeof opt.selector === 'string' && opt.selector) || undefined
+              selector: (typeof opt.selector === 'string' && opt.selector) || undefined
             }
           });
         }
@@ -32,8 +30,7 @@ function safeFn(id, callback, opt) {
           exception: $$e,
           tag: id,
           event: (typeof opt.event === 'string' && opt.event) || undefined,
-          selector:
-            (typeof opt.selector === 'string' && opt.selector) || undefined
+          selector: (typeof opt.selector === 'string' && opt.selector) || undefined
         });
       }
     }
