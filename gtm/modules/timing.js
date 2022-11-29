@@ -12,10 +12,7 @@ internal.timingQueue = [];
 function timing(category, variable, value, label, object, id) {
   try {
     if (internal.sentPageview === false && options.waitQueue) {
-      log(
-        'Info',
-        'The timing event (' + arguments + ') has been add to the queue'
-      );
+      log('Info', 'The timing event (' + arguments + ') has been add to the queue');
       return internal.timingQueue.push(arguments);
     }
 

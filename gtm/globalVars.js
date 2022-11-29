@@ -6,23 +6,30 @@ var options = {
   collectName: 'easyCollect',
   dataLayerName: 'dataLayer',
   debug: ({{Debug Mode}} || false),
-  waitQueue: true,
+  waitQueue: true, //put 'false' if only GA4 is implemented
+  historyParams: [],
   containerId: ({{Container ID}} || ''),
   exceptionEvent: 'gtm_dataQuality_event',
   exceptionCategory: 'GTM Exception',
   customNamePageview: 'ga_pageview',
   customNameEvent: 'ga_event',
+  customNameGA4Event: 'ga4_event',
+  currencyCode: 'BRL',
   customNameTiming: 'ga_timing',
   errorSampleRate: 1,
   gtmCleanup: function (gtmId) {
     collect.setDataLayer('ecommerce', undefined);
-    collect.setDataLayer('noInteraction', undefined);
-  },
-  customNameGA4Event: 'ga4_event'
+    collect.setDataLayer('eventNoInteraction', undefined);
+
+    // For GA4
+    for (var i = 0; i < options.historyParams.length; i++) {
+      collect.setDataLayer(options.historyParams[i], undefined);
+    }
+  }
 };
 
 var internal = {
-    sentPageview: false
+  sentPageview: false
 };
 
 var collect = {
