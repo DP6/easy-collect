@@ -24,7 +24,7 @@
 
 ---
 
-# Sumário
+# Índice
 
 - [Sumário](#sumário)
 - [Referência técnica](#referência-técnica)
