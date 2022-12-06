@@ -79,7 +79,7 @@ easyCollect.safeFn('GAU -> GA4 - Promotion Views', function(collect) {
 
 <u>Dados transformados para formato GA4:</u>
 
-![Promotions Views Output](easy-collect\documentations\images\ecommerce\views_promo_out.png)
+![Promotions Views Output](/documentations/images/ecommerce/promoViews_out.png)
 
 #### **Clique na promoção:**
 
