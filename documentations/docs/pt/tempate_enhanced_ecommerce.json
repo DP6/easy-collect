@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2022-10-17 23:41:47",
+    "exportTime": "2023-01-06 20:07:04",
     "containerVersion": {
         "path": "accounts/6006949291/containers/93045820/versions/0",
         "accountId": "6006949291",
@@ -71,7 +71,7 @@
                 "accountId": "6006949291",
                 "containerId": "93045820",
                 "tagId": "8",
-                "name": "GA4 - Configuration",
+                "name": "GA4 - Configuração",
                 "type": "gaawc",
                 "parameter": [
                     {
@@ -90,7 +90,7 @@
                         "value": "G-0123456789"
                     }
                 ],
-                "fingerprint": "1662393442636",
+                "fingerprint": "1673035416486",
                 "firingTriggerId": [
                     "2147479553"
                 ],
@@ -398,7 +398,7 @@
                     {
                         "type": "TAG_REFERENCE",
                         "key": "measurementId",
-                        "value": "GA4 - Configuration"
+                        "value": "GA4 - Configuração"
                     }
                 ],
                 "fingerprint": "1665014586318",
@@ -409,6 +409,112 @@
                     {
                         "tagName": "Easy Collect - Core"
                     }
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "tagId": "38",
+                "name": "GA4 -Data Quality",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "exception"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventParameters",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "description"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{description}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "dataLayer_event"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{dataLayer_event}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{id}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "selector"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{selector}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementId",
+                        "value": "none"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "G-0123456"
+                    }
+                ],
+                "fingerprint": "1669825338435",
+                "firingTriggerId": [
+                    "37"
                 ],
                 "tagFiringOption": "ONCE_PER_EVENT",
                 "monitoringMetadata": {
@@ -444,6 +550,31 @@
                     }
                 ],
                 "fingerprint": "1662394241803"
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "triggerId": "37",
+                "name": "exception",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "exception"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1669824636000"
             }
         ],
         "variable": [
@@ -940,6 +1071,110 @@
                 ],
                 "fingerprint": "1665014577817",
                 "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "variableId": "33",
+                "name": "description",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "description"
+                    }
+                ],
+                "fingerprint": "1669824538017",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "variableId": "34",
+                "name": "dataLayer_event",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "dataLayer_event"
+                    }
+                ],
+                "fingerprint": "1669824566333",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "variableId": "35",
+                "name": "id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "id"
+                    }
+                ],
+                "fingerprint": "1669824596769",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93045820",
+                "variableId": "36",
+                "name": "selector",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "selector"
+                    }
+                ],
+                "fingerprint": "1669824613869",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
@@ -986,7 +1221,7 @@
                 "name": "Container ID"
             }
         ],
-        "fingerprint": "1666050107007",
+        "fingerprint": "1673035624073",
         "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6006949291/containers/93045820/versions/0?apiLink=version"
     }
 }
