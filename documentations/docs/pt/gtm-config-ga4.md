@@ -122,7 +122,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 ### 2-1 Template para coleta somente de  *Eventos Recomendados*   
 <br/>
     
-Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_recomendados..json" dowload="template_recomendados.json" type="application/json"> Aqui.</a>   
+Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_recomendados.json" dowload="template_recomendados.json" type="application/json"> Aqui.</a>   
 
   Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos recomendados:
 
@@ -145,7 +145,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 ### 2-2 Template para coleta somente de *Enhanced Ecommerce*
 <br/>
- Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_enhanced_ecommerce..json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
+ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/tempate_enhanced_ecommerce.json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
 
    Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos enhanced ecommerce:
 
@@ -178,7 +178,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 <br/>
 
-Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_enhanced_recomendados..json" dowload="template_enhanced_recomendados.json" type="application/json"> Aqui.</a>   
+Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_recomendados_enhanced_ecommerce.json" dowload="template_enhanced_recomendados.json" type="application/json"> Aqui.</a>   
 
  Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos recomendados e enhanced ecommerce:
 
