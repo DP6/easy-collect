@@ -32,7 +32,9 @@ Este documento descreve os passos para a utilização da biblioteca Easy-collect
  * [1-Configuração do Easy Collect](#1-configuração-do-easy-collect)  
     * [1.1 Tag Easy Collect](#1-1-tag-easy-collect)  
     * [1.2 Tag de Configuração GA4](#1-2-tag-de-configuração-ga4)  
-    * [1.3 Tag coleta Event](#1-3-tag-coleta-event)    
+    * [1.3 Tag coleta Event](#1-3-tag-coleta-event)
+    * [1.4 Tag Data Quality](#1-4-tag-dataquality)
+    
 
     <br/>
 
@@ -100,6 +102,23 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
 <br/>
 
+## 1-4 Tag DataQuality
+
+
+Para sua configuração é necessario  utilizar o template padrão de eventos do Google Tag Manager para coleta de eventos GA4, uma pratica recomendada é incluir um fluxo de dados que tenha como finalidade *unica* receber os eventos de erro(exception) para acompanhamento do fluxo diário das coletas, a tag deverá ter as seguintes configurações:
+
+- Um fluxo de dados com finalidade unica de recebimento dos parâmetros do evento exception;
+- Os parâmetros utilizados serão váriaveis da camada de dados com os respectivos conteudos:*description, dataLayer_event , id, selector* ;
+- O acionador deverá ser um evento personalizado contendo o nome do evento: *exception*.
+
+**Tag Modelo**
+
+<img src="" height="500" width="800">
+
+
+
+<br/>
+
 --------------------- 
 
 
@@ -128,6 +147,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 |Eventos|   Parâmetros  |      |     |
 |---------------------|-----------|------|------|
+|exception|description|dataLayer_event|id|selector|
 |earn_virtual_currency| virtual_currency_name|
 |join_group|group_id |
 |login|method
@@ -153,6 +173,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 |Eventos |   Parâmetros  |      |     |      | | | | | 
 |---------------------|-----------|------|------|------|------|------|------|------|
+|exception|description|dataLayer_event|id|selector|
 |add_payment_info| | currency|value|items|
 |add_shipping_info|currency| value | items|
 |add_to_cart|currency|value |items|
@@ -186,6 +207,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 |Eventos  |   Parâmetros  |      |     |      | | | | | 
 |---------------------|-----------|------|------|------|------|------|------|------|
+|exception|description|dataLayer_event|id|selector|
 |add_payment_info| | currency|value|items|
 |add_shipping_info|currency| value | items|
 |add_to_cart|currency|value |items|
