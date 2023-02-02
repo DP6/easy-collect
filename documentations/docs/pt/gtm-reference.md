@@ -305,7 +305,7 @@ easyCollect.ga4Event(
     ]
   }, 
   {}, 
-  id
+  'GA4 - Event'
 );
 ```
 
