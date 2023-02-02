@@ -37,8 +37,11 @@
         - [Exemplo de código](#exemplo-de-código)
       - [event(category, action, label, object)](#eventcategory-action-label-object)
       - [event(category, action, label, value, object)](#eventcategory-action-label-value-object)
-        - [Parâmetros](#parâmetros-1)
-        - [Exemplo de código](#exemplo-de-código-1)
+        - [Parâmetros](#parc3a2metros-1)
+        - [Exemplo de código](#exemplo-de-cc3b3digo-1)
+      - [ga4Event(event_name, params, ecommerce, id)](#ga4eventeventname-params-ecommerce-id)
+        - [Parâmetros](#parc3a2metros-2)
+        - [Exemplo de código](#exemplo-de-cc3b3digo-2)
     - [Utilidades](#utilidades)
       - [getDataLayer(key)](#getdatalayerkey)
         - [Argumentos](#argumentos)
@@ -196,7 +199,7 @@ easyCollect.pageview('/post/finalizou-leitura', {
 
 #### event(category, action, label, value, object)
 
-Utilizada para efetuar disparos de eventos.
+Utilizada para efetuar disparos de eventos de Google Analytics Universal.
 
 ##### Parâmetros
 
@@ -220,6 +223,90 @@ easyCollect.event('MinhaCategoria', 'MinhaAcao', 'MeuRotulo', {
   eventValue: 0,
   cidade: 'São Paulo'
 });
+```
+
+#### ga4Event(event_name, params, ecommerce, id)
+
+Utilizada para efetuar disparos de eventos de Google Analytics 4.
+
+##### Parâmetros
+
+- `event_name`: String que representa a categoria do evento.
+- `params` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar parâmetros e objetos de Enhanced Ecommerce.
+- `ecommerce` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar objetos de Enhanced Ecommerce com o padrão do Google Analytics Universal.
+- `id` (opcional): String que deve receber o nome da tag (do GTM) em que o código em questão estiver contido.
+
+##### Exemplo de código
+
+```javascript
+easyCollect.ga4Event(
+  'NomeDoEvento', 
+  {'PrimeiroParâmetro':'Parâmetro'}, 
+  {}, 
+  'GA4 - Event'
+);
+```
+
+```javascript
+easyCollect.ga4Event(
+  'purchase', 
+  {'PrimeiroParâmetro': 'ValorDoParâmetro'}, 
+  {
+    'purchase': {
+      'actionField': {
+        'id': 'T12345',                         
+        'affiliation': 'Online Store',
+        'revenue': '35.43',                     
+        'tax':'4.90',
+        'shipping': '5.99',
+        'coupon': 'SUMMER_SALE'
+      },
+      'products': [{                            
+        'name': 'Triblend Android T-Shirt',     
+        'id': '12345',
+        'price': '15.25',
+        'brand': 'Google',
+        'category': 'Apparel',
+        'variant': 'Gray',
+        'quantity': 1,
+        'coupon': ''                            
+       }]
+    }
+  }, 
+  'GA4 - Event'
+);
+```
+
+```javascript
+easyCollect.ga4Event(
+  'purchase', 
+  {
+    items: [
+      {
+        item_id: "SKU_12345",
+        item_name: "Stan and Friends Tee",
+        affiliation: "Google Merchandise Store",
+        coupon: "SUMMER_FUN",
+        discount: 2.22,
+        index: 0,
+        item_brand: "Google",
+        item_category: "Apparel",
+        item_category2: "Adult",
+        item_category3: "Shirts",
+        item_category4: "Crew",
+        item_category5: "Short sleeve",
+        item_list_id: "related_products",
+        item_list_name: "Related Products",
+        item_variant: "green",
+        location_id: "ChIJIQBpAG2ahYAR_6128GcTUEo",
+        price: 9.99,
+        quantity: 1
+      }
+    ]
+  }, 
+  {}, 
+  id
+);
 ```
 
 ### Utilidades
