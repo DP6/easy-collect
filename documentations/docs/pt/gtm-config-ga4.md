@@ -61,7 +61,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
 **Tag Modelo**
 
-<img src='https://user-images.githubusercontent.com/103647128/188479825-6de619dc-413a-47c2-8054-55bdc13ac0ce.gif'   height="500" width="700" aling="center"> 
+<img src='https://user-images.githubusercontent.com/103647128/188479825-6de619dc-413a-47c2-8054-55bdc13ac0ce.gif' height="391" width="806" aling="center"> 
 
 
 
@@ -77,7 +77,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 **Tag Modelo**
 
 
-<img src="https://user-images.githubusercontent.com/103647128/188482596-6cad3a91-8953-413d-b9d8-1a7b68d32607.gif" height="500" width="800">
+<img src="https://user-images.githubusercontent.com/103647128/188482596-6cad3a91-8953-413d-b9d8-1a7b68d32607.gif" height="378" width="806">
 
 
 
@@ -96,7 +96,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 
   **Tag Modelo**
 
-<img src="https://user-images.githubusercontent.com/103647128/188487990-35e419f8-26c6-43ce-aaf0-2d18006b5a46.gif" height="500" width="800">
+<img src="https://user-images.githubusercontent.com/103647128/188487990-35e419f8-26c6-43ce-aaf0-2d18006b5a46.gif" height="382" width="806">
 
 <br/>
 
@@ -113,7 +113,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
  Como demonstrativo de instalação utilizaremos o template de eventos recomendados, porém , o processo de configuração abrange todos os demais templates.
 
 
-<img src="https://user-images.githubusercontent.com/103647128/193691208-0196f8db-8bc9-4a11-aa9b-06fd757b6eed.gif" height="500" width="700">
+<img src="https://user-images.githubusercontent.com/103647128/193691208-0196f8db-8bc9-4a11-aa9b-06fd757b6eed.gif" height="341" width="806">
 
 
 
@@ -122,7 +122,7 @@ A seguir um breve tutorial da configuração do Easy Collect em seu Google Tag M
 ### 2-1 Template para coleta somente de  *Eventos Recomendados*   
 <br/>
     
-Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_recomendados..json" dowload="template_recomendados.json" type="application/json"> Aqui.</a>   
+Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/master/documentations/docs/pt/template_recomendados.json" dowload="template_recomendados.json" type="application/json"> Aqui.</a>   
 
   Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos recomendados:
 
@@ -145,7 +145,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 ### 2-2 Template para coleta somente de *Enhanced Ecommerce*
 <br/>
- Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_enhanced_ecommerce..json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
+ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/master/documentations/docs/pt/template_enhanced_ecommerce.json" dowload="template_ecommerce.json" type="application/json"> Aqui</a>      
 
    Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos enhanced ecommerce:
 
@@ -178,7 +178,7 @@ Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-
 
 <br/>
 
-Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/dev/documentations/docs/pt/template_enhanced_recomendados..json" dowload="template_enhanced_recomendados.json" type="application/json"> Aqui.</a>   
+Faça o dowload do template <a href="https://raw.githubusercontent.com/DP6/easy-collect/master/documentations/docs/pt/template_enhanced_recomendados.json" dowload="template_enhanced_recomendados.json" type="application/json"> Aqui.</a>   
 
  Acompanhe na tabela os parâmetros que serão disponibilizados para a coleta de eventos recomendados e enhanced ecommerce:
 

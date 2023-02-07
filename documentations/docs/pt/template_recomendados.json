@@ -1,6 +1,6 @@
 {
     "exportFormatVersion": 2,
-    "exportTime": "2022-10-03 14:47:34",
+    "exportTime": "2022-10-17 23:53:13",
     "containerVersion": {
         "path": "accounts/6006949291/containers/93989605/versions/0",
         "accountId": "6006949291",
@@ -16,7 +16,25 @@
                 "WEB"
             ],
             "fingerprint": "1663781734645",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6006949291/containers/93989605/workspaces?apiLink=container"
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6006949291/containers/93989605/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true
+            },
+            "tagIds": [
+                "GTM-T74KQJV"
+            ]
         },
         "tag": [
             {
@@ -239,6 +257,21 @@
                                         "value": "{{item_name}}"
                                     }
                                 ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "name",
+                                        "value": "transaction_id"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "value",
+                                        "value": "{{transaction_id}}"
+                                    }
+                                ]
                             }
                         ]
                     },
@@ -248,7 +281,7 @@
                         "value": "GA4 - CONFIG"
                     }
                 ],
-                "fingerprint": "1663959170455",
+                "fingerprint": "1666050752861",
                 "firingTriggerId": [
                     "13"
                 ],
@@ -704,6 +737,32 @@
                 ],
                 "fingerprint": "1663783262399",
                 "formatValue": {}
+            },
+            {
+                "accountId": "6006949291",
+                "containerId": "93989605",
+                "variableId": "23",
+                "name": "transaction_id",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "transaction_id"
+                    }
+                ],
+                "fingerprint": "1666050749081",
+                "formatValue": {}
             }
         ],
         "builtInVariable": [
@@ -750,7 +809,7 @@
                 "name": "Container ID"
             }
         ],
-        "fingerprint": "1664808454049",
+        "fingerprint": "1666050793034",
         "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6006949291/containers/93989605/versions/0?apiLink=version"
     }
 }
