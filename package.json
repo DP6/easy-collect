@@ -100,7 +100,7 @@
         "jsdom": "^21.1.0",
         "mocha": "^10.1.0",
         "nyc": "^15.1.0",
-        "sonarqube-scanner": "^3.0.0"
+        "sonarqube-scanner": "^3.0.1"
     },
     "dependencies": {},
     "config": {
