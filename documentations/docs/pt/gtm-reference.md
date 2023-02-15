@@ -233,8 +233,6 @@ Utilizada para efetuar disparos de eventos de Google Analytics 4.
 
 - `event_name`: String que representa o nome do evento.
 - `params` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar parâmetros do evento e parâmetros de Ecommerce.
-- `ecommerce` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar objetos de Enhanced Ecommerce com o padrão do Google Analytics Universal.
-- `id` (opcional): String que deve receber o nome da tag (do GTM) em que o código em questão estiver contido.
 
 ##### Exemplo de código
 
@@ -242,36 +240,6 @@ Utilizada para efetuar disparos de eventos de Google Analytics 4.
 easyCollect.ga4Event(
   'search', 
   {'search_term': 'Vestidos floridos'}
-);
-```
-
-```javascript
-easyCollect.ga4Event(
-  'purchase', 
-  {'PrimeiroParâmetro': 'ValorDoParâmetro'}, 
-  {
-    'purchase': {
-      'actionField': {
-        'id': 'T12345',                         
-        'affiliation': 'Online Store',
-        'revenue': '35.43',                     
-        'tax':'4.90',
-        'shipping': '5.99',
-        'coupon': 'SUMMER_SALE'
-      },
-      'products': [{                            
-        'name': 'Triblend Android T-Shirt',     
-        'id': '12345',
-        'price': '15.25',
-        'brand': 'Google',
-        'category': 'Apparel',
-        'variant': 'Gray',
-        'quantity': 1,
-        'coupon': ''                            
-       }]
-    }
-  }, 
-  'GA4 - Event'
 );
 ```
 
