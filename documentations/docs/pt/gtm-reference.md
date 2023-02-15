@@ -232,7 +232,7 @@ Utilizada para efetuar disparos de eventos de Google Analytics 4.
 ##### Parâmetros
 
 - `event_name`: String que representa o nome do evento.
-- `params` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar parâmetros e objetos de Enhanced Ecommerce.
+- `params` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar parâmetros do evento e parâmetros de Ecommerce.
 - `ecommerce` (opcional): Objeto que será atribuído ao evento. Pode ser utilizado para passar objetos de Enhanced Ecommerce com o padrão do Google Analytics Universal.
 - `id` (opcional): String que deve receber o nome da tag (do GTM) em que o código em questão estiver contido.
 
