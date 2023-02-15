@@ -240,10 +240,8 @@ Utilizada para efetuar disparos de eventos de Google Analytics 4.
 
 ```javascript
 easyCollect.ga4Event(
-  'NomeDoEvento', 
-  {'PrimeiroParâmetro':'Parâmetro'}, 
-  {}, 
-  'GA4 - Event'
+  'search', 
+  {'search_term': 'Vestidos floridos'}
 );
 ```
 
