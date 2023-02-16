@@ -304,6 +304,46 @@
     }
   }
   
+  function off(id, event, selector, oldCallback, parent) {
+    var i, array, elm, callback;
+  
+    if (parent) return delegate(id, event, selector, oldCallback, parent);
+  
+    callback = safeFn(id, oldCallback, {
+      event: event,
+      selector: selector,
+      immediate: false
+    });
+  
+    if (typeof jQuery === 'function') {
+      elm = jQuery(selector);
+  
+      if (typeof elm.off === 'function') {
+        return elm.off(event, callback);
+      } else if (typeof elm.unbind === 'function') {
+        return elm.unbind(event, callback);
+      }
+    }
+  
+    if (typeof selector === 'string') {
+      array = document.querySelectorAll(selector);
+    } else if (typeof selector.length === 'undefined' || selector === window) {
+      array = [selector];
+    } else {
+      array = selector;
+    }
+  
+    for (i = 0; i < array.length; i++) {
+      elm = array[i];
+  
+      if (typeof elm.removeEventListener === 'function') {
+        elm.removeEventListener(event, callback);
+      } else {
+        elm.detachEvent (selector,event, callback);
+      }
+    }
+  }
+
   function reduceBool(arr) {
     var i;
     for (i = 0; i < arr.length; i++) {
@@ -588,6 +628,9 @@
       on: function(event, selector, callback, parent) {
         return on(conf.id, event, selector, callback, parent);
       },
+      off: function(event, selector, callback, parent) {
+        return off(conf.id, event, selector, callback, parent);
+      },
       delegate: function(event, selector, callback) {
         return on(conf.id, event, selector, callback, document.body);
       },
@@ -631,6 +674,13 @@
               on(conf.id, event, elm, parent);
             } else {
               on(conf.id, event, parent, callback, elm);
+            }
+          },
+          off: function(event, parent, callback) {
+            if (typeof parent === 'function') {
+              off(conf.id, event, elm, parent);
+            } else {
+              off(conf.id, event, parent, callback, elm);
             }
           },
           nodes: elm
